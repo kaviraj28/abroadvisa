@@ -45,8 +45,8 @@ use App\Http\Controllers\Admin\ClientRegistrationController;
 
 
 // Auth::routes();
-Route::get('xn-login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('xn-login', [LoginController::class, 'login']);
+Route::get('dn-login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('dn-login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');

@@ -1,5 +1,5 @@
 @php
-    $logo = $setting['site_main_logo'] ? get_media($setting['site_main_logo']) : '';
+    $logo = get_field('site_main_logo') ? get_media(get_field('site_main_logo')) : '';
     $logoheight = $logo ? $logo->height : '';
     $logowidth = $logo ? $logo->width : '';
 
@@ -141,8 +141,8 @@
                     "@type":"WebSite",
                     "@id":"{{ url('/') }}/#website",
                     "url":"{{ url('/') }}/",
-                    "name":"{{ $setting['homepage_seo_title'] ?? '' }}",
-                    "description":"{{ $setting['homepage_seo_description'] ?? '' }}",
+                    "name":"{{ get_field('homepage_seo_title') ?? '' }}",
+                    "description":"{{ get_field('homepage_seo_description') ?? '' }}",
                     "publisher":{
                         "@id":"{{ url('/') }}/#organization"
                     },

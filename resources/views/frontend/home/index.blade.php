@@ -14,245 +14,27 @@
 @endsection
 
 @section('content')
-    <!-- banner-section -->
-    <style>
-        .banner-style-three .image-layer:before {
-            background: -webkit-linear-gradient(-90deg, rgba(68, 1, 18, 1) 0%, rgba(0, 0, 0, 0.4) 100%);
-        }
-    </style>
     <section class="banner-section banner-style-three centred">
         <div class="image-layer">
-            <div class="relative overflow-hidden">
+            <div class="position-relative overflow-hidden">
                 <div class="slider-video-box">
                     <iframe
-                        src="https://www.youtube.com/embed/CKXE6HvourU?mode=opaque&wmode=transparent&autoplay=1&loop=1&controls=0&modestbranding=1&rel=0&autohide=1&showinfo=0&color=white&iv_load_policy=3&theme=light&wmode=transparent&mute=1&playlist=CKXE6HvourU"
-                        frameborder="0" allow="autoplay" style=""></iframe>
+                        src="https://www.youtube.com/embed/cIGQxDDnPZI?mode=opaque&autoplay=1&mute=1&loop=1&playlist=cIGQxDDnPZI&controls=1&modestbranding=1&rel=0&autohide=1"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div class="video-content">
+                        <div class="container d-none d-md-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="landmark"
+                    style="background: url({{ asset('frontend/images/landmark.png') }});
+                    background-repeat: repeat;background-size: auto;height: 164px;margin-top: -180px;z-index: 1;position: relative;background-size: cover;background-repeat: no-repeat;transform: rotateY(180deg);">
                 </div>
             </div>
         </div>
     </section>
-    <!-- banner-section end -->
 
-    <!-- service-style-three -->
-    <section class="service-style-three centred">
-        <div class="auto-container">
-            <div class="inner-container">
-                <span class="big-text">Services</span>
-                <div class="three-item-carousel owl-carousel owl-theme">
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-5.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-6.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details.html">Student Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-7.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-8.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details-2.html">Residence Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details-2.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-9.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-10.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details-4.html">Tourist Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details-4.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-5.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-6.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details.html">Student Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-7.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-8.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details-2.html">Residence Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details-2.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-9.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-10.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details-4.html">Tourist Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details-4.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-5.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-6.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details.html">Student Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-7.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-8.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details-2.html">Residence Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details-2.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-block-three">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-9.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img
-                                                src="{{ asset('frontend') }}/images/service/service-10.jpg"
-                                                alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="visa-details-4.html">Tourist Visa</a></h4>
-                                <p>Foresee the pain and trouble that are bound.</p>
-                                <div class="btn-box"><a href="visa-details-4.html"><span>More Details</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- service-style-three end -->
-
-    <!-- about-style-three -->
     <section class="about-style-three">
         <div class="auto-container">
             <div class="row clearfix">
@@ -309,89 +91,176 @@
             </div>
         </div>
     </section>
-    <!-- about-style-three end -->
 
-    <!-- coaching-style-three -->
-    <section class="coaching-style-three"
-        style="background-image: url({{ asset('frontend') }}/images/background/coaching-bg-2.jpg);">
-        <div class="outer-container clearfix">
-            <div class="coaching-block-three">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span class="count-text">01</span>
-                        <div class="link"><a href="coaching-details.html"><i class="flaticon-diagonal-arrow-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="text">
-                            <h4><a href="coaching-details.html"><span>ielts</span> Coaching</a></h4>
-                        </div>
-                        <div class="overlay-text">
-                            <h4><a href="coaching-details.html"><span>ielts</span> Coaching</a></h4>
-                            <p>Indignation and dislike men who are so all beguileds and demoralized expounds that.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="coaching-block-three">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span class="count-text">02</span>
-                        <div class="link"><a href="coaching-details.html"><i class="flaticon-diagonal-arrow-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="text">
-                            <h4><a href="coaching-details-2.html"><span>toefl</span> Coaching</a></h4>
-                        </div>
-                        <div class="overlay-text">
-                            <h4><a href="coaching-details-2.html"><span>toefl</span> Coaching</a></h4>
-                            <p>Indignation and dislike men who are so all beguileds and demoralized expounds that.</p>
+    <section class="coaching-style-two">
+        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}'
+            style="background-image: url({{ asset('frontend') }}/images/background/coaching-bg.jpg);"></div>
+        <div class="outer-container">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">01</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-5.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">Uk Spouse Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">Uk Spouse Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="coaching-block-three">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span class="count-text">03</span>
-                        <div class="link"><a href="coaching-details.html"><i class="flaticon-diagonal-arrow-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="text">
-                            <h4><a href="coaching-details-3.html"><span>pte</span> Coaching</a></h4>
-                        </div>
-                        <div class="overlay-text">
-                            <h4><a href="coaching-details-3.html"><span>pte</span> Coaching</a></h4>
-                            <p>Indignation and dislike men who are so all beguileds and demoralized expounds that.</p>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">02</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-6.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">UK British Gorkha Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">UK British Gorkha Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="coaching-block-three">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span class="count-text">04</span>
-                        <div class="link"><a href="coaching-details.html"><i class="flaticon-diagonal-arrow-1"></i></a>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">03</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-7.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">Australia Spouse Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">Australia Spouse Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="lower-box">
-                        <div class="text">
-                            <h4><a href="coaching-details-4.html"><span>oet</span> Coaching</a></h4>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">04</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-8.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">USA Spouse Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">USA Spouse Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
                         </div>
-                        <div class="overlay-text">
-                            <h4><a href="coaching-details-4.html"><span>oet</span> Coaching</a></h4>
-                            <p>Indignation and dislike men who are so all beguileds and demoralized expounds that.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">05</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-9.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">Canad Spouse Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">Canad Spouse Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">06</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-10.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">Schegen Visit Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">Schegen Visit Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">07</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-11.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">UK Visit Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">UK Visit Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                    <div class="coaching-block-two">
+                        <div class="inner-box">
+                            <span class="count-text">08</span>
+                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-12.jpg"
+                                    alt="">
+                            </figure>
+                            <div class="text">
+                                <h4><a href="/">USA Visit Visa</a></h4>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
+                            <div class="overlay-text">
+                                <h4><a href="/">USA Visit Visa</a></h4>
+                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
+                                    teachings of the great.</p>
+                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- coaching-style-three end -->
 
-    <!-- countries-style-three -->
     <section class="countries-style-three">
         <div class="pattern-layer" style="background-image: url({{ asset('frontend') }}/images/shape/shape-16.png);">
         </div>
@@ -420,7 +289,7 @@
                         <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-10.png"
                                 alt=""></figure>
                         <h6>Immigrate to</h6>
-                        <h4><a href="countries-details-4.html">United Arab Emirates</a></h4>
+                        <h4><a href="/">United Arab Emirates</a></h4>
                         <p>Desire that they can foresee trouble bound ensue.</p>
                         <ul class="list clearfix">
                             <li><i class="flaticon-diagonal-arrow"></i>Visitor Visa</li>
@@ -459,9 +328,7 @@
             </div>
         </div>
     </section>
-    <!-- countries-style-three end -->
 
-    <!-- chooseus-style-three -->
     <section class="chooseus-style-three centred">
         <div class="auto-container">
             <div class="sec-title light centred">
@@ -571,9 +438,7 @@
             </div>
         </div>
     </section>
-    <!-- chooseus-style-three end -->
 
-    <!-- testimonial-style-three -->
     <section class="testimonial-style-three">
         <div class="auto-container">
             <div class="sec-title">
@@ -656,58 +521,7 @@
             </div>
         </div>
     </section>
-    <!-- testimonial-style-three end -->
 
-    <!-- gallery-section -->
-    <section class="gallery-section">
-        <div class="outer-container">
-            <div class="gallery-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                <div class="gallery-block-one">
-                    <div class="inner-box">
-                        <figure class="image"><img src="{{ asset('frontend') }}/images/gallery/gallery-1.jpg"
-                                alt=""></figure>
-                        <div class="view-btn"><a class="lightbox-image" data-fancybox="gallery"
-                                href="assets/images/gallery/gallery-1.jpg"><i class="flaticon-zoom-in"></i></a></div>
-                    </div>
-                </div>
-                <div class="gallery-block-one">
-                    <div class="inner-box">
-                        <figure class="image"><img src="{{ asset('frontend') }}/images/gallery/gallery-2.jpg"
-                                alt=""></figure>
-                        <div class="view-btn"><a class="lightbox-image" data-fancybox="gallery"
-                                href="assets/images/gallery/gallery-2.jpg"><i class="flaticon-zoom-in"></i></a></div>
-                    </div>
-                </div>
-                <div class="gallery-block-one">
-                    <div class="inner-box">
-                        <figure class="image"><img src="{{ asset('frontend') }}/images/gallery/gallery-3.jpg"
-                                alt=""></figure>
-                        <div class="view-btn"><a class="lightbox-image" data-fancybox="gallery"
-                                href="assets/images/gallery/gallery-3.jpg"><i class="flaticon-zoom-in"></i></a></div>
-                    </div>
-                </div>
-                <div class="gallery-block-one">
-                    <div class="inner-box">
-                        <figure class="image"><img src="{{ asset('frontend') }}/images/gallery/gallery-4.jpg"
-                                alt=""></figure>
-                        <div class="view-btn"><a class="lightbox-image" data-fancybox="gallery"
-                                href="assets/images/gallery/gallery-4.jpg"><i class="flaticon-zoom-in"></i></a></div>
-                    </div>
-                </div>
-                <div class="gallery-block-one">
-                    <div class="inner-box">
-                        <figure class="image"><img src="{{ asset('frontend') }}/images/gallery/gallery-5.jpg"
-                                alt=""></figure>
-                        <div class="view-btn"><a class="lightbox-image" data-fancybox="gallery"
-                                href="assets/images/gallery/gallery-5.jpg"><i class="flaticon-zoom-in"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- gallery-section end -->
-
-    <!-- funfact-section -->
     <section class="funfact-section">
         <div class="outer-container clearfix">
             <div class="funfact-block-one">
@@ -777,9 +591,7 @@
             </div>
         </div>
     </section>
-    <!-- funfact-section end -->
 
-    <!-- faq-section -->
     <section class="faq-section" style="background-image: url({{ asset('frontend') }}/images/background/faq-bg.jpg);">
         <div class="auto-container">
             <div class="row clearfix">
@@ -792,12 +604,12 @@
                                 get the answers ask to our experts.</p>
                         </div>
                         <ul class="questions-list clearfix">
-                            <li><a href="faq.html"><span>Q1.</span>Which country is better for immigration?</a></li>
-                            <li><a href="faq.html"><span>Q2.</span>How can I get a student visa?</a></li>
-                            <li><a href="faq.html"><span>Q3.</span>How much does immigration cost?</a></li>
-                            <li><a href="faq.html"><span>Q4.</span>How do I contact Immigo Consultant?</a></li>
+                            <li><a href="/"><span>Q1.</span>Which country is better for immigration?</a></li>
+                            <li><a href="/"><span>Q2.</span>How can I get a student visa?</a></li>
+                            <li><a href="/"><span>Q3.</span>How much does immigration cost?</a></li>
+                            <li><a href="/"><span>Q4.</span>How do I contact Immigo Consultant?</a></li>
                         </ul>
-                        <div class="link"><a href="faq.html">View More Faq’s <i class="flaticon-next"></i></a></div>
+                        <div class="link"><a href="/">View More Faq’s <i class="flaticon-next"></i></a></div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 contact-column">
@@ -837,9 +649,7 @@
             </div>
         </div>
     </section>
-    <!-- faq-section end -->
 
-    <!-- news-section -->
     <section class="news-section style-two bg-color-1">
         <div class="auto-container">
             <div class="sec-title centred">
@@ -851,7 +661,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <h2>14<span>Oct</span></h2>
-                            <figure class="image"><a href="blog-details.html"><img
+                            <figure class="image"><a href="/"><img
                                         src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
@@ -859,16 +669,16 @@
                                 <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-1.jpg"
                                         alt="">
                                 </figure>
-                                <h6><a href="blog-details.html">Immigration</a></h6>
+                                <h6><a href="/">Immigration</a></h6>
                                 <span>Post By: Colmin O'Neill</span>
                             </div>
-                            <h4><a href="blog-details.html">Citizenship Concept on How to Become a UK Citizen</a></h4>
+                            <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
                             <p>Laborio physical exercise excepts obtain some advantage from...</p>
                             <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="blog-details.html"><span>REad More</span></a></div>
+                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
                                 <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="blog-details.html">36</a></li>
-                                    <li><i class="far fa-comment"></i><a href="blog-details.html">08</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">36</a></li>
+                                    <li><i class="far fa-comment"></i><a href="/">08</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -878,7 +688,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <h2>05<span>Oct</span></h2>
-                            <figure class="image"><a href="blog-details.html"><img
+                            <figure class="image"><a href="/"><img
                                         src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
@@ -886,16 +696,16 @@
                                 <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-2.jpg"
                                         alt="">
                                 </figure>
-                                <h6><a href="blog-details.html">Resident Visa</a></h6>
+                                <h6><a href="/">Resident Visa</a></h6>
                                 <span>Post By: Layla Madison</span>
                             </div>
-                            <h4><a href="blog-details.html">Benefits of Being a Permnent Resident in Canada</a></h4>
+                            <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
                             <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
                             <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="blog-details.html"><span>REad More</span></a></div>
+                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
                                 <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="blog-details.html">03</a></li>
-                                    <li><i class="far fa-comment"></i><a href="blog-details.html">12</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">03</a></li>
+                                    <li><i class="far fa-comment"></i><a href="/">12</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -905,7 +715,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <h2>14<span>Oct</span></h2>
-                            <figure class="image"><a href="blog-details.html"><img
+                            <figure class="image"><a href="/"><img
                                         src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
@@ -913,16 +723,16 @@
                                 <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-1.jpg"
                                         alt="">
                                 </figure>
-                                <h6><a href="blog-details.html">Immigration</a></h6>
+                                <h6><a href="/">Immigration</a></h6>
                                 <span>Post By: Colmin O'Neill</span>
                             </div>
-                            <h4><a href="blog-details.html">Citizenship Concept on How to Become a UK Citizen</a></h4>
+                            <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
                             <p>Laborio physical exercise excepts obtain some advantage from...</p>
                             <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="blog-details.html"><span>REad More</span></a></div>
+                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
                                 <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="blog-details.html">36</a></li>
-                                    <li><i class="far fa-comment"></i><a href="blog-details.html">08</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">36</a></li>
+                                    <li><i class="far fa-comment"></i><a href="/">08</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -932,7 +742,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <h2>05<span>Oct</span></h2>
-                            <figure class="image"><a href="blog-details.html"><img
+                            <figure class="image"><a href="/"><img
                                         src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
@@ -940,16 +750,16 @@
                                 <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-2.jpg"
                                         alt="">
                                 </figure>
-                                <h6><a href="blog-details.html">Resident Visa</a></h6>
+                                <h6><a href="/">Resident Visa</a></h6>
                                 <span>Post By: Layla Madison</span>
                             </div>
-                            <h4><a href="blog-details.html">Benefits of Being a Permnent Resident in Canada</a></h4>
+                            <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
                             <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
                             <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="blog-details.html"><span>REad More</span></a></div>
+                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
                                 <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="blog-details.html">03</a></li>
-                                    <li><i class="far fa-comment"></i><a href="blog-details.html">12</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">03</a></li>
+                                    <li><i class="far fa-comment"></i><a href="/">12</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -959,7 +769,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <h2>14<span>Oct</span></h2>
-                            <figure class="image"><a href="blog-details.html"><img
+                            <figure class="image"><a href="/"><img
                                         src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
@@ -967,16 +777,16 @@
                                 <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-1.jpg"
                                         alt="">
                                 </figure>
-                                <h6><a href="blog-details.html">Immigration</a></h6>
+                                <h6><a href="/">Immigration</a></h6>
                                 <span>Post By: Colmin O'Neill</span>
                             </div>
-                            <h4><a href="blog-details.html">Citizenship Concept on How to Become a UK Citizen</a></h4>
+                            <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
                             <p>Laborio physical exercise excepts obtain some advantage from...</p>
                             <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="blog-details.html"><span>REad More</span></a></div>
+                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
                                 <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="blog-details.html">36</a></li>
-                                    <li><i class="far fa-comment"></i><a href="blog-details.html">08</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">36</a></li>
+                                    <li><i class="far fa-comment"></i><a href="/">08</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -986,7 +796,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <h2>05<span>Oct</span></h2>
-                            <figure class="image"><a href="blog-details.html"><img
+                            <figure class="image"><a href="/"><img
                                         src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
@@ -994,16 +804,16 @@
                                 <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-2.jpg"
                                         alt="">
                                 </figure>
-                                <h6><a href="blog-details.html">Resident Visa</a></h6>
+                                <h6><a href="/">Resident Visa</a></h6>
                                 <span>Post By: Layla Madison</span>
                             </div>
-                            <h4><a href="blog-details.html">Benefits of Being a Permnent Resident in Canada</a></h4>
+                            <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
                             <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
                             <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="blog-details.html"><span>REad More</span></a></div>
+                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
                                 <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="blog-details.html">03</a></li>
-                                    <li><i class="far fa-comment"></i><a href="blog-details.html">12</a></li>
+                                    <li><i class="far fa-heart"></i><a href="/">03</a></li>
+                                    <li><i class="far fa-comment"></i><a href="/">12</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1012,40 +822,6 @@
             </div>
         </div>
     </section>
-    <!-- news-section end -->
-
-    <!-- clients-section -->
-    <section class="clients-section style-two">
-        <div class="outer-container">
-            <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                <figure class="clients-logo-box">
-                    <a href="index.html"><img src="{{ asset('frontend') }}/images/clients/clients-logo-7.png"
-                            alt=""></a>
-                </figure>
-                <figure class="clients-logo-box">
-                    <a href="index.html"><img src="{{ asset('frontend') }}/images/clients/clients-logo-8.png"
-                            alt=""></a>
-                </figure>
-                <figure class="clients-logo-box">
-                    <a href="index.html"><img src="{{ asset('frontend') }}/images/clients/clients-logo-9.png"
-                            alt=""></a>
-                </figure>
-                <figure class="clients-logo-box">
-                    <a href="index.html"><img src="{{ asset('frontend') }}/images/clients/clients-logo-10.png"
-                            alt=""></a>
-                </figure>
-                <figure class="clients-logo-box">
-                    <a href="index.html"><img src="{{ asset('frontend') }}/images/clients/clients-logo-11.png"
-                            alt=""></a>
-                </figure>
-                <figure class="clients-logo-box">
-                    <a href="index.html"><img src="{{ asset('frontend') }}/images/clients/clients-logo-12.png"
-                            alt=""></a>
-                </figure>
-            </div>
-        </div>
-    </section>
-    <!-- clients-section end -->
 
     {{-- @if ($popups->isNotEmpty())
         @foreach ($popups as $key => $value)

@@ -15,13 +15,10 @@
 
 @section('content')
     @include('frontend.global.banner', [
-        'small_title' => $content->banner_small_title ?? $content->name,
-        'big_title' => $content->banner_big_title ?? null,
-        'description' => $content->banner_description ?? null,
-        'link' => $content->banner_link_url ?? null,
-        'linktext' => $content->banner_link_text ?? null,
-        'social' => $content->banner_social ?? null,
-        'image' => $content->image ?? null,
+        'name' => $content->name,
+        'banner' => $content->banner ?? null,
+        'parentname' => '',
+        'parentlink' => '',
     ])
     @if ($blogs->isNotEmpty())
         <section class="blog-area bg-white pb-50 pt-50">
@@ -40,7 +37,7 @@
                                         <a href="{{ route('blogsingle', $blog->slug) }}">{{ $blog->name ?? '' }}</a>
                                     </h3>
                                     <p>{{ stripLetters($blog->description, 51, '...') }}</p>
-                                    <a href="keyword-search.html">Read More <i class="fa-light fa-arrow-right"></i></a>
+                                    <a href="/">Read More <i class="fa-light fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

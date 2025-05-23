@@ -134,13 +134,13 @@
                                 <div class="sidebar__post rc__post">
                                     <div class="rc__post mb-10 d-flex align-items-center">
                                         <div class="rc__post-thumb mr-20">
-                                            <a href="blog-details.html"><img
+                                            <a href="/"><img
                                                     src="{{ asset('frontend') }}/img/blog/sidebar/blog-sm-1.jpg"
                                                     alt=""></a>
                                         </div>
                                         <div class="rc__post-content">
                                             <h3 class="rc__post-title">
-                                                <a href="blog-details.html">Unpacking SEO for <br> the Google Local
+                                                <a href="/">Unpacking SEO for <br> the Google Local
                                                     Pack.</a>
                                             </h3>
                                             <div class="rc__meta">
@@ -150,13 +150,13 @@
                                     </div>
                                     <div class="rc__post mb-10 d-flex align-items-center">
                                         <div class="rc__post-thumb mr-20">
-                                            <a href="blog-details.html"><img
+                                            <a href="/"><img
                                                     src="{{ asset('frontend') }}/img/blog/sidebar/blog-sm-2.jpg"
                                                     alt=""></a>
                                         </div>
                                         <div class="rc__post-content">
                                             <h3 class="rc__post-title">
-                                                <a href="blog-details.html">7 of the Best Examples of Beautiful Blog
+                                                <a href="/">7 of the Best Examples of Beautiful Blog
                                                     Design</a>
                                             </h3>
                                             <div class="rc__meta">
@@ -166,13 +166,13 @@
                                     </div>
                                     <div class="rc__post mb-10 d-flex align-items-center">
                                         <div class="rc__post-thumb mr-20">
-                                            <a href="blog-details.html"><img
+                                            <a href="/"><img
                                                     src="{{ asset('frontend') }}/img/blog/sidebar/blog-sm-3.jpg"
                                                     alt=""></a>
                                         </div>
                                         <div class="rc__post-content">
                                             <h3 class="rc__post-title">
-                                                <a href="blog-details.html">Working From Home?
+                                                <a href="/">Working From Home?
                                                     Let’s Get Started</a>
                                             </h3>
                                             <div class="rc__meta">

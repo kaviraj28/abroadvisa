@@ -15,13 +15,10 @@
 
 @section('content')
     @include('frontend.global.banner', [
-        'small_title' => $content->banner_small_title ?? $content->name,
-        'big_title' => $content->banner_big_title ?? null,
-        'description' => $content->banner_description ?? null,
-        'link' => $content->banner_link_url ?? null,
-        'linktext' => $content->banner_link_text ?? null,
-        'social' => $content->banner_social ?? null,
-        'image' => $content->image ?? null,
+        'name' => $content->name,
+        'banner' => $content->banner ?? null,
+        'parentname' => '',
+        'parentlink' => '',
     ])
     <div class="about-area ptb-100">
         <div class="container">

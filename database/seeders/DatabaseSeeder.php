@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Super Admin',
             'email' => 'admin@visaabroad.com',
-            'password' => Hash::make('Sunita@123'),
+            'password' => Hash::make('Visa@123'),
         ]);
     }
 }
