@@ -16,7 +16,6 @@
     </div>
 
     <div class="menu-inner-shadow"></div>
-
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}">
@@ -25,11 +24,17 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
-
         <li class="menu-item @if (Request::segment(2) == 'media') {{ 'active open' }} @endif">
             <a class="menu-link {{ Request::segment(2) == 'media' ? 'active' : '' }}" href="{{ route('media.index') }}">
                 <i class="menu-icon tf-icons bx bx-images"></i>
                 <div data-i18n="Accordion">Media</div>
+            </a>
+        </li>
+        <li class="menu-item @if (Request::segment(2) == 'menus') {{ 'active open' }} @endif">
+            <a class="menu-link {{ Request::segment(2) == 'menus' ? 'active' : '' }}"
+                href="{{ route('admin.menu.index') }}">
+                <i class="menu-icon tf-icons bx bx-menu-alt-right"></i>
+                <div data-i18n="Accordion">Menu</div>
             </a>
         </li>
         <li class="menu-item @if (Request::segment(2) == 'contacts' || Request::segment(2) == 'clientRegistration') {{ 'active open' }} @endif">
@@ -165,72 +170,6 @@
                         <div data-i18n="Accordion">Create Service</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'pricing' ? 'active' : '' }}"
-                        href="{{ route('pricing.index') }}">
-                        <i class="menu-icon tf-icons bx bx-dollar"></i>
-                        <div data-i18n="Accordion">Pricing</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'roadmap' ? 'active' : '' }}"
-                        href="{{ route('roadmap.index') }}">
-                        <i class="menu-icon tf-icons bx bx-water"></i>
-                        <div data-i18n="Accordion">Roadmap</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'industry' ? 'active' : '' }}"
-                        href="{{ route('industry.index') }}">
-                        <i class="menu-icon tf-icons bx bx-building-house"></i>
-                        <div data-i18n="Accordion">Industry</div>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
-        <li class="menu-item @if (Request::segment(2) == 'project') {{ 'active open' }} @endif">
-            <a class="menu-link menu-toggle" href="javascript:void(0)">
-                <i class="menu-icon tf-icons bx bx-briefcase"></i>
-                <div data-i18n="General Setting">Projects</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'project' && Request::segment(3) == '' ? 'active' : '' }}"
-                        href="{{ route('project.index') }}">
-                        <i class="menu-icon tf-icons bx bx-briefcase"></i>
-                        <div data-i18n="Accordion">All Projects</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'project' && Request::segment(3) == 'create' ? 'active' : '' }}"
-                        href="{{ route('project.create') }}">
-                        <i class="menu-icon tf-icons bx bxs-file-plus"></i>
-                        <div data-i18n="Accordion">Create Project</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu-item @if (Request::segment(2) == 'partner') {{ 'active open' }} @endif">
-            <a class="menu-link menu-toggle" href="javascript:void(0)">
-                <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="General Setting">Clients</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'partner' && Request::segment(3) == '' ? 'active' : '' }}"
-                        href="{{ route('partner.index') }}">
-                        <i class="menu-icon tf-icons bx bx-group"></i>
-                        <div data-i18n="Accordion">All Clients</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'partner' && Request::segment(3) == 'create' ? 'active' : '' }}"
-                        href="{{ route('partner.create') }}">
-                        <i class="menu-icon tf-icons bx bxs-file"></i>
-                        <div data-i18n="Accordion">Create Client</div>
-                    </a>
-                </li>
             </ul>
         </li>
 
@@ -252,37 +191,6 @@
                         href="{{ route('faq.create') }}">
                         <i class="menu-icon tf-icons bx bxs-file-plus"></i>
                         <div data-i18n="Accordion">Create Faq</div>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
-
-        <li class="menu-item @if (Request::segment(2) == 'careers' || Request::segment(2) == 'recruitments') {{ 'active open' }} @endif">
-            <a class="menu-link menu-toggle" href="javascript:void(0)">
-                <i class="menu-icon tf-icons bx bx-briefcase"></i>
-                <div data-i18n="General Setting">Careers</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'careers' && Request::segment(3) == '' ? 'active' : '' }}"
-                        href="{{ route('careers.index') }}">
-                        <i class="menu-icon tf-icons bx bx-briefcase"></i>
-                        <div data-i18n="Accordion">All Careers</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'careers' && Request::segment(3) == 'create' ? 'active' : '' }}"
-                        href="{{ route('careers.create') }}">
-                        <i class="menu-icon tf-icons bx bxs-file-plus"></i>
-                        <div data-i18n="Accordion">Create Careers</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'recruitments' ? 'active' : '' }}"
-                        href="{{ route('recruitments.index') }}">
-                        <i class="menu-icon tf-icons bx bx-user"></i>
-                        <div data-i18n="Accordion">Recruitments</div>
                     </a>
                 </li>
 
@@ -342,13 +250,6 @@
                         href="{{ route('popup.index') }}">
                         <i class="menu-icon tf-icons bx bx-conversation"></i>
                         <div data-i18n="Accordion">Popups</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link {{ Request::segment(2) == 'technology' ? 'active' : '' }}"
-                        href="{{ route('technology.index') }}">
-                        <i class="menu-icon tf-icons bx bx-rectangle"></i>
-                        <div data-i18n="Accordion">Technology</div>
                     </a>
                 </li>
             </ul>

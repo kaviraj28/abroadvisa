@@ -1,4 +1,11 @@
-* {
+/*** 
+
+====================================================================
+  Reset
+====================================================================
+
+ ***/
+ * {
   margin:0px;
   padding:0px;
   border:none;
@@ -4223,7 +4230,7 @@ div#mCSB_1_container{
 /** header-top-two **/
 
 .header-top-two{
-  background: #ffccd9;
+  background: #15384d;
   padding: 11px 0px;
 }
 
@@ -4264,12 +4271,12 @@ div#mCSB_1_container{
 
 .header-top-two .phone-box h6{
   font-size: 16px;
-  color: #000;
+  color: #fff;
   font-weight: 600;
 }
 
 .header-top-two .phone-box h6 a{
-  color: #000;
+  color: #fff;
 }
 
 .header-top-two .phone-box h6 a:hover{
@@ -4303,8 +4310,8 @@ div#mCSB_1_container{
 .header-top-two .social-links li a{
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 28px;
   height: 28px;
   line-height: 28px;
@@ -4330,7 +4337,7 @@ div#mCSB_1_container{
   font-size: 16px;
   line-height: 28px;
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 
 .header-top-two .search-inner .form-group{
@@ -4376,7 +4383,7 @@ div#mCSB_1_container{
   top: 0px;
   right: 0px;
   width: 100%;
-  background: #ffdce5;
+  background: #15384dba;
 }
 
 .header-style-two .outer-box .main-box{
@@ -4412,7 +4419,7 @@ div#mCSB_1_container{
 }
 
 .header-style-two .main-menu .navigation > li > a{
-  color: #000;
+  color: #fff;
   padding: 32px 0px;
 }
 
@@ -4450,7 +4457,7 @@ div#mCSB_1_container{
 }
 
 .header-style-two .sticky-header{
-  background: #ffdce5;
+  background: #15384d;
 }
 
 .header-style-two .menu-right-content{
@@ -5109,10 +5116,6 @@ div#mCSB_1_container{
 
 .coaching-block-two .inner-box .overlay-text p{
   color: #b8bfc5;
-}
-
-.coaching-block-two .inner-box .overlay-text .link a{
-
 }
 
 .coaching-block-two .inner-box .overlay-text .link{
@@ -6814,8 +6817,8 @@ div#mCSB_1_container{
   padding: 240px 0px 270px 0px;
 }
 
-.banner-style-three .image-layer:before {
-  background: -webkit-linear-gradient(-90deg, rgba(68,1,18,1) 0%, rgba(0,0,0,0.4) 100%) !important;
+.banner-style-three .banner-carousel .slide-item:before{
+  background: -webkit-linear-gradient(-90deg, rgba(68,1,18,1) 0%, rgba(0,0,0,0.4) 100%);
 }
 
 .banner-style-three .owl-theme .owl-nav button{
@@ -8564,8 +8567,8 @@ div#mCSB_1_container{
 .footer-style-three .contact-widget .social-links li a{
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -8599,7 +8602,7 @@ div#mCSB_1_container{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 143px 0px 22px 0px;
+  padding: 200px 0px 22px 0px;
 }
 
 .page-title:before{
@@ -12370,6 +12373,7 @@ div#mCSB_1_container{
   width: 100%;
   height: 500px;
 }
+
 
 .slider-video-box {
   position: relative;

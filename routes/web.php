@@ -88,7 +88,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
      */
 
     Route::resource('contacts', ContactsController::class);
-    Route::resource('clientRegistration', ClientRegistrationController::class);
 
 
     /*
@@ -101,22 +100,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('faq', FaqController::class);
     Route::resource('members', MemberController::class);
     Route::resource('page', PageController::class);
-    Route::resource('partner', PartnerController::class);
     Route::resource('review', ReviewController::class);
     Route::resource('services', ServicesController::class);
     Route::resource('counters', CounterController::class);
     Route::resource('social', SocialController::class);
-    Route::resource('project', ProjectController::class);
     Route::resource('progress', ProgressController::class);
     Route::resource('branch', BranchController::class);
     Route::resource('popup', PopupController::class);
-    Route::resource('careers', CareersController::class);
-    Route::resource('recruitments', RecruitmentsController::class);
-    Route::resource('pricing', PricingController::class);
-    Route::resource('technology', TechnologyController::class);
-    Route::resource('roadmap', RoadmapController::class);
-    Route::resource('industry', IndustryController::class);
-
 
     /*
     |--------------------------------------------------------------------------
@@ -134,16 +124,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     | Menu Routes
     |--------------------------------------------------------------------------
      */
-    // Route::get('menus/{id?}', [MenuController::class, 'index'])->name('admin.menu.index');
-    // Route::post('create-menu', [MenuController::class, 'store'])->name('admin.menu.create');
+    Route::get('menus/{id?}', [MenuController::class, 'index'])->name('admin.menu.index');
+    Route::post('create-menu', [MenuController::class, 'store'])->name('admin.menu.create');
 
-    // Route::get('add-post-to-menu', [MenuController::class, 'addPostToMenu'])->name('admin.menu.addpost');
-    // Route::get('add-page-to-menu', [MenuController::class, 'addPageToMenu'])->name('admin.menu.addpage');
-    // Route::get('add-service-to-menu', [MenuController::class, 'addServiceToMenu'])->name('admin.menu.addservice');
-    // Route::get('add-custom-link', [MenuController::class, 'addCustomLink'])->name('admin.menu.addcustom');
+    Route::get('add-post-to-menu', [MenuController::class, 'addPostToMenu'])->name('admin.menu.addpost');
+    Route::get('add-page-to-menu', [MenuController::class, 'addPageToMenu'])->name('admin.menu.addpage');
+    Route::get('add-service-to-menu', [MenuController::class, 'addServiceToMenu'])->name('admin.menu.addservice');
+    Route::get('add-custom-link', [MenuController::class, 'addCustomLink'])->name('admin.menu.addcustom');
 
-    // Route::get('update-menu', [MenuController::class, 'updateMenu'])->name('admin.menu.updatemenu');
-    // Route::post('update-menuitem/{id}', [MenuController::class, 'updateMenuItem'])->name('admin.menu.updateitem');
-    // Route::get('delete-menuitem/{id}/{key}/{in?}', [MenuController::class, 'deleteMenuItem'])->name('admin.menu.deleteitem');
-    // Route::get('delete-menu/{id}', [MenuController::class, 'destroy'])->name('admin.menu.deletemenu');
+    Route::get('update-menu', [MenuController::class, 'updateMenu'])->name('admin.menu.updatemenu');
+    Route::post('update-menuitem/{id}', [MenuController::class, 'updateMenuItem'])->name('admin.menu.updateitem');
+    Route::get('delete-menuitem/{id}/{key}/{in?}', [MenuController::class, 'deleteMenuItem'])->name('admin.menu.deleteitem');
+    Route::get('delete-menu/{id}', [MenuController::class, 'destroy'])->name('admin.menu.deletemenu');
 });

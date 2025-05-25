@@ -137,13 +137,11 @@
                                     <option class="p-3" value="2">About Us</option>
                                     <option class="p-3" value="3">Contact Us</option>
                                     <option class="p-3" value="4">Services</option>
-                                    <option class="p-3" value="5">Work</option>
+                                    <option class="p-3" value="5">Country</option>
                                     <option class="p-3" value="6">Teams</option>
                                     <option class="p-3" value="7">Reviews</option>
                                     <option class="p-3" value="8">Faqs</option>
-                                    <option class="p-3" value="9">Partners</option>
                                     <option class="p-3" value="10">Blogs</option>
-                                    <option class="p-3" value="11">Careers</option>
                                     <option class="p-3" value="12">Sitemap</option>
                                 </select>
                             </div>

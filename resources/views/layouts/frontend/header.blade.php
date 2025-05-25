@@ -1,7 +1,6 @@
-<!-- main header -->
 <header class="main-header header-style-two">
-    <!-- header-top -->
-    <div class="header-top-two">
+
+    <div class="header-top-two d-none d-md-block">
         <div class="auto-container">
             <div class="top-inner clearfix">
                 <div class="left-column pull-left">
@@ -25,7 +24,7 @@
             </div>
         </div>
     </div>
-    <!-- header-lower -->
+
     <div class="header-lower">
         <div class="outer-box">
             <div class="auto-container">
@@ -38,7 +37,7 @@
                             </a></figure>
                     </div>
                     <div class="menu-area clearfix">
-                        <!--Mobile Navigation Toggler-->
+
                         <div class="mobile-nav-toggler">
                             <i class="icon-bar"></i>
                             <i class="icon-bar"></i>
@@ -80,7 +79,6 @@
         </div>
     </div>
 
-    <!--sticky Header-->
     <div class="sticky-header">
         <div class="auto-container">
             <div class="outer-box">
@@ -94,7 +92,7 @@
                     </div>
                     <div class="menu-area">
                         <nav class="main-menu clearfix">
-                            <!--Keep This Empty / Menu will come through Javascript-->
+
                         </nav>
                     </div>
                     <div class="menu-right-content">
@@ -107,9 +105,7 @@
         </div>
     </div>
 </header>
-<!-- main-header end -->
 
-<!-- Mobile Menu  -->
 <div class="mobile-menu">
     <div class="menu-backdrop"></div>
     <div class="close-btn"><i class="fas fa-times"></i></div>
@@ -119,7 +115,7 @@
                 <img src="{{ $setting['site_main_logo'] ? asset(get_media($setting['site_main_logo'])->fullurl) : '' }}"
                     alt="{{ $setting['site_main_logo'] ? get_media($setting['site_main_logo'])->alt : 'Visa Services' }}">
             </a></div>
-        <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+        <div class="menu-outer"></div>
         <div class="contact-info">
             <h4>Contact Info</h4>
             <ul>
@@ -138,4 +134,4 @@
             </ul>
         </div>
     </nav>
-</div><!-- End Mobile Menu -->
+</div>

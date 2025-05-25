@@ -665,21 +665,11 @@
                                         src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
-                            <div class="author-box">
-                                <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-1.jpg"
-                                        alt="">
-                                </figure>
-                                <h6><a href="/">Immigration</a></h6>
-                                <span>Post By: Colmin O'Neill</span>
-                            </div>
                             <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
                             <p>Laborio physical exercise excepts obtain some advantage from...</p>
                             <div class="lower-box clearfix">
                                 <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-                                <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="/">36</a></li>
-                                    <li><i class="far fa-comment"></i><a href="/">08</a></li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -692,21 +682,12 @@
                                         src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
-                            <div class="author-box">
-                                <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-2.jpg"
-                                        alt="">
-                                </figure>
-                                <h6><a href="/">Resident Visa</a></h6>
-                                <span>Post By: Layla Madison</span>
-                            </div>
+
                             <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
                             <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
                             <div class="lower-box clearfix">
                                 <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-                                <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="/">03</a></li>
-                                    <li><i class="far fa-comment"></i><a href="/">12</a></li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -719,21 +700,12 @@
                                         src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
-                            <div class="author-box">
-                                <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-1.jpg"
-                                        alt="">
-                                </figure>
-                                <h6><a href="/">Immigration</a></h6>
-                                <span>Post By: Colmin O'Neill</span>
-                            </div>
+
                             <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
                             <p>Laborio physical exercise excepts obtain some advantage from...</p>
                             <div class="lower-box clearfix">
                                 <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-                                <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="/">36</a></li>
-                                    <li><i class="far fa-comment"></i><a href="/">08</a></li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -746,21 +718,12 @@
                                         src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
-                            <div class="author-box">
-                                <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-2.jpg"
-                                        alt="">
-                                </figure>
-                                <h6><a href="/">Resident Visa</a></h6>
-                                <span>Post By: Layla Madison</span>
-                            </div>
+
                             <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
                             <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
                             <div class="lower-box clearfix">
                                 <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-                                <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="/">03</a></li>
-                                    <li><i class="far fa-comment"></i><a href="/">12</a></li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -773,21 +736,12 @@
                                         src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
-                            <div class="author-box">
-                                <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-1.jpg"
-                                        alt="">
-                                </figure>
-                                <h6><a href="/">Immigration</a></h6>
-                                <span>Post By: Colmin O'Neill</span>
-                            </div>
+
                             <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
                             <p>Laborio physical exercise excepts obtain some advantage from...</p>
                             <div class="lower-box clearfix">
                                 <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-                                <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="/">36</a></li>
-                                    <li><i class="far fa-comment"></i><a href="/">08</a></li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -800,21 +754,12 @@
                                         src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
-                            <div class="author-box">
-                                <figure class="author-thumb"><img src="{{ asset('frontend') }}/images/news/author-2.jpg"
-                                        alt="">
-                                </figure>
-                                <h6><a href="/">Resident Visa</a></h6>
-                                <span>Post By: Layla Madison</span>
-                            </div>
+
                             <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
                             <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
                             <div class="lower-box clearfix">
                                 <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-                                <ul class="info clearfix pull-right">
-                                    <li><i class="far fa-heart"></i><a href="/">03</a></li>
-                                    <li><i class="far fa-comment"></i><a href="/">12</a></li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -823,17 +768,17 @@
         </div>
     </section>
 
-    {{-- @if ($popups->isNotEmpty())
+    @if ($popups->isNotEmpty())
         @foreach ($popups as $key => $value)
-            <div class="danfepopup modal fade" id="danfe-{{ $key }}" data-bs-backdrop="static"
-                data-bs-keyboard="false" tabindex="-1" aria-labelledby="danfe-{{ $key }}Label"
+            <div class="visaspopup modal fade" id="visas-{{ $key }}" data-bs-backdrop="static"
+                data-bs-keyboard="false" tabindex="-1" aria-labelledby="visas-{{ $key }}Label"
                 aria-hidden="true" style="z-index: 999999999;">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header pb-0">
-                            <h5 class="modal-title" id="danfe-{{ $key }}Label">{{ $value->name }}</h5>
-                            <a class="btn-close" data-bs-target="#danfe-{{ $key++ }}" data-bs-dismiss="modal"
-                                href="#danfe-{{ $key++ }}"data-bs-toggle="modal" aria-label="Close"></a>
+                            <h5 class="modal-title" id="visas-{{ $key }}Label">{{ $value->name }}</h5>
+                            <a class="btn-close" data-bs-target="#visas-{{ $key++ }}" data-bs-dismiss="modal"
+                                href="#visas-{{ $key++ }}"data-bs-toggle="modal" aria-label="Close"></a>
                         </div>
                         <div class="modal-body">
                             @if ($value->image)
@@ -851,13 +796,13 @@
                 </div>
             </div>
         @endforeach
-    @endif --}}
+    @endif
 @endsection
 
 @section('scripts')
     <script type="text/javascript">
         $(window).on('load', function() {
-            $('#danfe-0').modal('show');
+            $('#visas-0').modal('show');
         });
     </script>
     <script>

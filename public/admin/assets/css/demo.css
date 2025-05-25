@@ -17,7 +17,7 @@
     font-size: 1.3rem;
     letter-spacing: -0.5px;
     text-transform: uppercase;
-    color: #696cff;
+    color: #01b800;
 }
 
 
@@ -130,7 +130,7 @@ a.menu-link.active {
 }
 
 a.menu-link.active div {
-    color: #696cff;
+    color: #01b800;
 }
 
 .clr-green {
@@ -141,7 +141,7 @@ a.menu-link.active div {
 .nav-tabs .nav-link.active:hover,
 .nav-tabs .nav-link.active:focus {
     background: #e7e7ff;
-    background-color: #7174fe;
+    background-color: #01b800;
     color: white;
 }
 

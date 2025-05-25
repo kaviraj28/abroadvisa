@@ -21,23 +21,35 @@
         'parentlink' => '',
     ])
     @if ($blogs->isNotEmpty())
-        <section class="blog-area bg-white pb-50 pt-50">
-            <div class="container-xxl d_container">
-                <div class="row">
+        <section class="news-section blog-three-column">
+            <div class="auto-container">
+                <div class="row clearfix">
                     @foreach ($blogs as $blog)
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="tpblog mb-30">
-                                <div class="tpblog-thumb mb-25 fix">
-                                    <a href="{{ route('blogsingle', $blog->slug) }}">
-                                        {!! get_image($blog->image, '', 'blog') !!}
-                                    </a>
-                                </div>
-                                <div class="tpblog-content">
-                                    <h3 class="tpblog-title">
-                                        <a href="{{ route('blogsingle', $blog->slug) }}">{{ $blog->name ?? '' }}</a>
-                                    </h3>
-                                    <p>{{ stripLetters($blog->description, 51, '...') }}</p>
-                                    <a href="/">Read More <i class="fa-light fa-arrow-right"></i></a>
+                        <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                            <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <h2>14<span>Oct</span></h2>
+                                        <figure class="image">
+                                            <a href="{{ route('blogsingle', $blog->slug) }}">
+                                                {{ $blog->image }}
+                                                {!! get_image($blog->image, '', '') !!}
+                                            </a>
+                                        </figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h4>
+                                            <a href="{{ route('blogsingle', $blog->slug) }}">{{ $blog->name ?? '' }}</a>
+                                        </h4>
+                                        <p>{{ stripLetters($blog->description, 51, '...') }}</p>
+                                        <div class="lower-box clearfix">
+                                            <div class="link pull-left">
+                                                <a href="{{ route('blogsingle', $blog->slug) }}">
+                                                    <span>Read More</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -33,6 +33,5 @@ class AppServiceProvider extends ServiceProvider
         $data3 = News::whereStatus(1)->latest()->limit(4)->get();
         View::share('setting', $data1);
         View::share('socialdata', $data2);
-        View::share('footerblog', $data3);
     }
 }

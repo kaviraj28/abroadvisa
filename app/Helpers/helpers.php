@@ -1,8 +1,59 @@
 <?php
 
+use App\Models\Menu;
 use App\Models\Media;
+use App\Models\MenuLocation;
 use App\Models\Setting;
 use Illuminate\Support\Str;
+
+
+
+function getMenus($id)
+{
+    $nav = MenuLocation::where('location', $id)->first();
+    if ($nav) {
+        $sitemenu = json_decode($nav->content);
+        $sitemenu = $sitemenu[0];
+        foreach ($sitemenu as $menu) {
+            $menu->title = Menu::where('id', $menu->id)->value('title');
+            $menu->name = Menu::where('id', $menu->id)->value('name');
+            $menu->slug = Menu::where('id', $menu->id)->value('slug');
+            $menu->target = Menu::where('id', $menu->id)->value('target');
+            $menu->type = Menu::where('id', $menu->id)->value('type');
+            if (!empty($menu->children[0])) {
+                foreach ($menu->children[0] as $child) {
+                    $child->title = Menu::where('id', $child->id)->value('title');
+                    $child->name = Menu::where('id', $child->id)->value('name');
+                    $child->slug = Menu::where('id', $child->id)->value('slug');
+                    $child->target = Menu::where('id', $child->id)->value('target');
+                    $child->type = Menu::where('id', $child->id)->value('type');
+
+                    if (!empty($child->children[0])) {
+                        foreach ($child->children[0] as $subchild) {
+                            $subchild->title = Menu::where('id', $subchild->id)->value('title');
+                            $subchild->name = Menu::where('id', $subchild->id)->value('name');
+                            $subchild->slug = Menu::where('id', $subchild->id)->value('slug');
+                            $subchild->target = Menu::where('id', $subchild->id)->value('target');
+                            $subchild->type = Menu::where('id', $subchild->id)->value('type');
+
+                            if (!empty($subchild->children[0])) {
+                                foreach ($subchild->children[0] as $newchild) {
+                                    $newchild->title = Menu::where('id', $newchild->id)->value('title');
+                                    $newchild->name = Menu::where('id', $newchild->id)->value('name');
+                                    $newchild->slug = Menu::where('id', $newchild->id)->value('slug');
+                                    $newchild->target = Menu::where('id', $newchild->id)->value('target');
+                                    $newchild->type = Menu::where('id', $newchild->id)->value('type');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return $sitemenu;
+    }
+}
 
 if (!function_exists('get_field')) {
     function get_field($key = null)

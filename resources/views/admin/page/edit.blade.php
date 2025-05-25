@@ -219,19 +219,15 @@
                                     <option class="p-3" @if ($page->template == 4) selected @endif
                                         value="4">Services</option>
                                     <option class="p-3" @if ($page->template == 5) selected @endif
-                                        value="5">Work</option>
+                                        value="5">Country</option>
                                     <option class="p-3" @if ($page->template == 6) selected @endif
                                         value="6">Teams</option>
                                     <option class="p-3" @if ($page->template == 7) selected @endif
                                         value="7">Reviews</option>
                                     <option class="p-3" @if ($page->template == 8) selected @endif
                                         value="8">Faqs</option>
-                                    <option class="p-3" @if ($page->template == 9) selected @endif
-                                        value="9">Partners</option>
                                     <option class="p-3" @if ($page->template == 10) selected @endif
                                         value="10">Blogs</option>
-                                    <option class="p-3" @if ($page->template == 11) selected @endif
-                                        value="11">Careers</option>
                                     <option class="p-3" @if ($page->template == 12) selected @endif
                                         value="12">Sitemap</option>
                                 </select>
