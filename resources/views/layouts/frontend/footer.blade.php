@@ -54,13 +54,11 @@
     <div class="footer-bottom">
         <div class="auto-container">
             <div class="bottom-inner clearfix">
-                <div class="copyright pull-left">
-                    <p>&copy; {{ date('Y') }} <a href="/">Visa Abroad</a>. All Rights Reserved.</p>
+                <div class="copyright">
+                    <p class="text-center">&copy; {{ date('Y') }} <a href="/">Prime European Expert Group</a>.
+                        All Rights
+                        Reserved.</p>
                 </div>
-                <ul class="footer-nav pull-right clearfix">
-                    <li><a href="/">Privacy Policy</a></li>
-                    <li><a href="/">Term Of Use</a></li>
-                </ul>
             </div>
         </div>
     </div>

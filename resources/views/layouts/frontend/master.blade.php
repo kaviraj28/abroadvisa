@@ -12,7 +12,6 @@
         href="{{ asset($setting['site_fav_icon'] ? get_media($setting['site_fav_icon'])->fullurl : 'frontend/images/logo.png') }}"
         type="image/x-icon">
     @yield('seo')
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
         rel="stylesheet">
@@ -33,7 +32,7 @@
 </head>
 
 <body>
-    <div class="boxed_wrapper home-3">
+    <div class="boxed_wrapper home-2">
         @include('layouts.frontend.header')
         <main>
             @yield('content')

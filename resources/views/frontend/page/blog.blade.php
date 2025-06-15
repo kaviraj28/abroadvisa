@@ -29,10 +29,8 @@
                             <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <h2>14<span>Oct</span></h2>
                                         <figure class="image">
                                             <a href="{{ route('blogsingle', $blog->slug) }}">
-                                                {{ $blog->image }}
                                                 {!! get_image($blog->image, '', '') !!}
                                             </a>
                                         </figure>
@@ -41,7 +39,7 @@
                                         <h4>
                                             <a href="{{ route('blogsingle', $blog->slug) }}">{{ $blog->name ?? '' }}</a>
                                         </h4>
-                                        <p>{{ stripLetters($blog->description, 51, '...') }}</p>
+                                        <p>{{ stripLetters($blog->description, 110, '...') }}</p>
                                         <div class="lower-box clearfix">
                                             <div class="link pull-left">
                                                 <a href="{{ route('blogsingle', $blog->slug) }}">

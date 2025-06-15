@@ -8,8 +8,8 @@
         'keyword' => $setting['homepage_seo_keywords'] ?? '',
         'schema' => $setting['homepage_seo_schema'] ?? '',
         'seoimage' => $setting['homepage_image'] ?? '',
-        'created_at' => '2023-11-10T08:09:15+00:00',
-        'updated_at' => '2023-11-10T10:54:15+00:00',
+        'created_at' => '2025-06-10T08:09:15+00:00',
+        'updated_at' => '2025-06-10T10:54:15+00:00',
     ])
 @endsection
 
@@ -91,175 +91,51 @@
             </div>
         </div>
     </section>
-
-    <section class="coaching-style-two">
-        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}'
-            style="background-image: url({{ asset('frontend') }}/images/background/coaching-bg.jpg);"></div>
-        <div class="outer-container">
-            <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">01</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-5.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">Uk Spouse Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">Uk Spouse Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">02</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-6.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">UK British Gorkha Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">UK British Gorkha Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
+    @if ($services->isNotEmpty())
+        <section class="coaching-style-two">
+            <div class="bg-layer parallax-bg" data-parallax='{"y": 100}'
+                style="background-image: url({{ asset('frontend') }}/images/background/coaching-bg.jpg);"></div>
+            <div class="outer-container">
+                <div class="row clearfix">
+                    @foreach ($services as $key => $data)
+                        <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                            <div class="coaching-block-two">
+                                <div class="inner-box">
+                                    <span class="count-text">0{{ $key + 1 }}</span>
+                                    @if ($data->image)
+                                        <figure class="image-box">
+                                            {!! get_image($data->image) !!}
+                                        </figure>
+                                    @endif
+                                    <div class="text">
+                                        <h4><a href="{{ route('servicesingle', $data->slug) }}">{{ $data->name ?? '' }}</a>
+                                        </h4>
+                                        <div class="link">
+                                            <a href="{{ route('servicesingle', $data->slug) }}">
+                                                <i class="flaticon-diagonal-arrow-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="overlay-text">
+                                        <h4>
+                                            <a
+                                                href="{{ route('servicesingle', $data->slug) }}">{{ $data->name ?? '' }}</a>
+                                        </h4>
+                                        @if ($data->short_description)
+                                            <p>{{ $data->short_description ?? '' }}</p>
+                                        @endif
+                                        <div class="link"><a href="{{ route('servicesingle', $data->slug) }}"><i
+                                                    class="flaticon-diagonal-arrow-1"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">03</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-7.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">Australia Spouse Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">Australia Spouse Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">04</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-8.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">USA Spouse Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">USA Spouse Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">05</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-9.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">Canad Spouse Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">Canad Spouse Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">06</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-10.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">Schegen Visit Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">Schegen Visit Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">07</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-11.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">UK Visit Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">UK Visit Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
-                    <div class="coaching-block-two">
-                        <div class="inner-box">
-                            <span class="count-text">08</span>
-                            <figure class="image-box"><img src="{{ asset('frontend') }}/images/resource/coaching-12.jpg"
-                                    alt="">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="/">USA Visit Visa</a></h4>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                            <div class="overlay-text">
-                                <h4><a href="/">USA Visit Visa</a></h4>
-                                <p>Indignation and dislike men who are so all beguileds and demoralized expounds that
-                                    teachings of the great.</p>
-                                <div class="link"><a href="/"><i class="flaticon-diagonal-arrow-1"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <section class="countries-style-three">
         <div class="pattern-layer" style="background-image: url({{ asset('frontend') }}/images/shape/shape-16.png);">
@@ -272,8 +148,8 @@
             <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
                 <div class="countries-block-three">
                     <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-9.png"
-                                alt=""></figure>
+                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-9.png" alt="">
+                        </figure>
                         <h6>Immigrate to</h6>
                         <h4><a href="countries-details.html">United States</a></h4>
                         <p>Known for the quality universities & friendly country.</p>
@@ -286,8 +162,8 @@
                 </div>
                 <div class="countries-block-three">
                     <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-10.png"
-                                alt=""></figure>
+                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-10.png" alt="">
+                        </figure>
                         <h6>Immigrate to</h6>
                         <h4><a href="/">United Arab Emirates</a></h4>
                         <p>Desire that they can foresee trouble bound ensue.</p>
@@ -300,8 +176,8 @@
                 </div>
                 <div class="countries-block-three">
                     <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-11.png"
-                                alt=""></figure>
+                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-11.png" alt="">
+                        </figure>
                         <h6>Immigrate to</h6>
                         <h4><a href="countries-details-5.html">United Kingdom</a></h4>
                         <p>Known for the quality universities & friendly country.</p>
@@ -438,160 +314,70 @@
             </div>
         </div>
     </section>
+    @if ($reviews->isNotEmpty())
+        <section class="testimonial-style-three">
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h6>Client Reviews</h6>
+                    <h2>Feedback From Our Clients</h2>
+                </div>
+                <div class="three-item-carousel owl-carousel owl-theme owl-dots-none">
+                    @foreach ($reviews as $key => $data)
+                        <div class="testimonial-content">
+                            <div class="inner-box">
+                                <div class="quote">
+                                    <img src="{{ asset('frontend') }}/images/icons/quote-3.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="author-thumb">
+                                        {!! get_image($data->image) !!}
+                                    </figure>
+                                    <h4>{{ $data->name ?? '' }}</h4>
+                                    <span class="designation">{{ $data->position ?? '' }}</span>
+                                </div>
+                                <div class="text">
+                                    {!! $data->description ?? '' !!}
+                                </div>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
-    <section class="testimonial-style-three">
-        <div class="auto-container">
-            <div class="sec-title">
-                <h6>Client Reviews</h6>
-                <h2>Feedback From Our Clients</h2>
+    @if ($counters->isNotEmpty())
+        <section class="funfact-section">
+            <div class="outer-container clearfix">
+                @foreach ($counters as $key => $data)
+                    <div class="funfact-block-one">
+                        <div class="inner-box">
+                            <div class="inner">
+                                <div class="icon-box">
+                                    {!! get_image($data->icon) !!}
+                                </div>
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="1500"
+                                        data-stop="{{ $data->count_num }}">0</span>
+                                    @if ($data->num_postfix)
+                                        <span>{{ $data->num_postfix ?? '' }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <h4>{{ $data->name ?? '' }}</h4>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            <div class="three-item-carousel owl-carousel owl-theme owl-dots-none">
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="quote"><img src="{{ asset('frontend') }}/images/icons/quote-3.png" alt="">
-                        </div>
-                        <div class="author-box">
-                            <figure class="author-thumb"><img
-                                    src="{{ asset('frontend') }}/images/resource/testimonial-9.jpg" alt="">
-                            </figure>
-                            <h4>Silverster Scott</h4>
-                            <span class="designation">Netherland</span>
-                        </div>
-                        <div class="text">
-                            <p>Immigo definitely highly recommended canadian an migration agency. A big applause & very
-                                grateful to Mr.Richard for efforts.</p>
-                        </div>
-                        <ul class="rating clearfix">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="quote"><img src="{{ asset('frontend') }}/images/icons/quote-3.png" alt="">
-                        </div>
-                        <div class="author-box">
-                            <figure class="author-thumb"><img
-                                    src="{{ asset('frontend') }}/images/resource/testimonial-10.jpg" alt="">
-                            </figure>
-                            <h4>Nora Penelope</h4>
-                            <span class="designation">Switcherland</span>
-                        </div>
-                        <div class="text">
-                            <p>Immigo visa consultancy is the best we came across while doing research and migrating to
-                                netherlans All informations genuine and helpful.</p>
-                        </div>
-                        <ul class="rating clearfix">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="testimonial-content">
-                    <div class="inner-box">
-                        <div class="quote"><img src="{{ asset('frontend') }}/images/icons/quote-3.png" alt="">
-                        </div>
-                        <div class="author-box">
-                            <figure class="author-thumb"><img
-                                    src="{{ asset('frontend') }}/images/resource/testimonial-11.jpg" alt="">
-                            </figure>
-                            <h4>Arlo Sebastian</h4>
-                            <span class="designation">South Africa</span>
-                        </div>
-                        <div class="text">
-                            <p>Awesome customer service, they know what they are doing. Straight to the point help with the
-                                forms if you need it. We 100% recommend to others.</p>
-                        </div>
-                        <ul class="rating clearfix">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="funfact-section">
-        <div class="outer-container clearfix">
-            <div class="funfact-block-one">
-                <div class="inner-box">
-                    <div class="inner">
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-29.png"
-                                alt=""></div>
-                        <div class="count-outer count-box">
-                            <span class="count-text" data-speed="1500" data-stop="25">0</span>
-                        </div>
-                    </div>
-                    <h4>Offices Worldwide</h4>
-                    <p>This mistaken idea denouncing praising pain was born anyone.</p>
-                </div>
-            </div>
-            <div class="funfact-block-one">
-                <div class="inner-box">
-                    <div class="inner">
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-30.png"
-                                alt=""></div>
-                        <div class="count-outer count-box">
-                            <span class="count-text" data-speed="1500" data-stop="468">0</span>
-                        </div>
-                    </div>
-                    <h4>Team Members</h4>
-                    <p>Teachings of the great explorer the truth master-builder of human.</p>
-                </div>
-            </div>
-            <div class="funfact-block-one">
-                <div class="inner-box">
-                    <div class="inner">
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-31.png"
-                                alt=""></div>
-                        <div class="count-outer count-box">
-                            <span class="count-text" data-speed="1500" data-stop="9.7">0</span><span>K</span>
-                        </div>
-                    </div>
-                    <h4>Visa Processed</h4>
-                    <p>Nor again is there anyone loves or pursue or desires to obtain pain.</p>
-                </div>
-            </div>
-            <div class="funfact-block-one">
-                <div class="inner-box">
-                    <div class="inner">
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-32.png"
-                                alt=""></div>
-                        <div class="count-outer count-box">
-                            <span>0</span><span class="count-text" data-speed="1500" data-stop="5">0</span>
-                        </div>
-                    </div>
-                    <h4>Countries Served</h4>
-                    <p>This mistaken idea denouncing praising pain was born anyone.</p>
-                </div>
-            </div>
-            <div class="funfact-block-one">
-                <div class="inner-box">
-                    <div class="inner">
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-33.png"
-                                alt=""></div>
-                        <div class="count-outer count-box">
-                            <span class="count-text" data-speed="1500" data-stop="99">0</span><span>%</span>
-                        </div>
-                    </div>
-                    <h4>Satisfied Clients</h4>
-                    <p>Teachings of the great explorer the truth master-builder of human.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    @endif
     <section class="faq-section" style="background-image: url({{ asset('frontend') }}/images/background/faq-bg.jpg);">
         <div class="auto-container">
             <div class="row clearfix">
@@ -600,7 +386,8 @@
                         <div class="sec-title light">
                             <h6>Most Common Faq’s</h6>
                             <h2>Questions & Answers</h2>
-                            <p>Get answers to the most frequently asked questions asked by our valuable clients, You did’t
+                            <p>Get answers to the most frequently asked questions asked by our valuable clients, You
+                                did’t
                                 get the answers ask to our experts.</p>
                         </div>
                         <ul class="questions-list clearfix">
@@ -617,7 +404,8 @@
                         <div class="sec-title light">
                             <h6>Let’s Connect</h6>
                             <h2>Send Your Message</h2>
-                            <p>Please feel free to get in touch with us using the contact form below. We'd love to hear for
+                            <p>Please feel free to get in touch with us using the contact form below. We'd love to hear
+                                for
                                 you.</p>
                         </div>
                         <div class="form-inner">
@@ -649,124 +437,46 @@
             </div>
         </div>
     </section>
-
-    <section class="news-section style-two bg-color-1">
-        <div class="auto-container">
-            <div class="sec-title centred">
-                <h6>News & Updates</h6>
-                <h2>Read Our Latest Insights</h2>
-            </div>
-            <div class="two-item-carousel owl-carousel owl-theme">
-                <div class="news-block-one">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <h2>14<span>Oct</span></h2>
-                            <figure class="image"><a href="/"><img
-                                        src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
-                            <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
-                            <p>Laborio physical exercise excepts obtain some advantage from...</p>
-                            <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-
-                            </div>
-                        </div>
-                    </div>
+    @if ($blogs->isNotEmpty())
+        <section class="news-section style-two bg-color-1">
+            <div class="auto-container">
+                <div class="sec-title centred">
+                    <h6>News & Updates</h6>
+                    <h2>Read Our Latest Insights</h2>
                 </div>
-                <div class="news-block-one">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <h2>05<span>Oct</span></h2>
-                            <figure class="image"><a href="/"><img
-                                        src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
+                <div class="two-item-carousel owl-carousel owl-theme">
+                    @foreach ($blogs as $key => $data)
+                        <div class="news-block-one">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <h2>14<span>Oct</span></h2>
+                                    <figure class="image">
+                                        <a href="{{ route('blogsingle', $data->slug) }}">
+                                            {!! get_image($data->image) !!}
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="lower-content">
+                                    <h4>
+                                        <a href="{{ route('blogsingle', $data->slug) }}">
+                                            {{ $data->name ?? '' }}
+                                        </a>
+                                    </h4>
+                                    <p>{{ stripLetters($data->description, 60) }}</p>
+                                    <div class="lower-box clearfix">
+                                        <div class="link pull-left"><a
+                                                href="{{ route('blogsingle', $data->slug) }}"><span>Read More</span></a>
+                                        </div>
 
-                            <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
-                            <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
-                            <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="news-block-one">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <h2>14<span>Oct</span></h2>
-                            <figure class="image"><a href="/"><img
-                                        src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
-
-                            <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
-                            <p>Laborio physical exercise excepts obtain some advantage from...</p>
-                            <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-block-one">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <h2>05<span>Oct</span></h2>
-                            <figure class="image"><a href="/"><img
-                                        src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
-
-                            <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
-                            <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
-                            <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-block-one">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <h2>14<span>Oct</span></h2>
-                            <figure class="image"><a href="/"><img
-                                        src="{{ asset('frontend') }}/images/news/news-7.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
-
-                            <h4><a href="/">Citizenship Concept on How to Become a UK Citizen</a></h4>
-                            <p>Laborio physical exercise excepts obtain some advantage from...</p>
-                            <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-block-one">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <h2>05<span>Oct</span></h2>
-                            <figure class="image"><a href="/"><img
-                                        src="{{ asset('frontend') }}/images/news/news-8.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
-
-                            <h4><a href="/">Benefits of Being a Permnent Resident in Canada</a></h4>
-                            <p>Foresee the pain and trouble that bound ensue equal blame belongs...</p>
-                            <div class="lower-box clearfix">
-                                <div class="link pull-left"><a href="/"><span>REad More</span></a></div>
-
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     @if ($popups->isNotEmpty())
         @foreach ($popups as $key => $value)
@@ -804,8 +514,7 @@
         $(window).on('load', function() {
             $('#visas-0').modal('show');
         });
-    </script>
-    <script>
+
         // Youtube Video 
         function setVideoCenter() {
             var $box = $('.slider-video-box');
