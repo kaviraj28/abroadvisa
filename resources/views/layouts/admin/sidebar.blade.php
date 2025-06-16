@@ -147,10 +147,7 @@
 
             </ul>
         </li>
-        <li class="menu-item @if (Request::segment(2) == 'services' ||
-                Request::segment(2) == 'pricing' ||
-                Request::segment(2) == 'roadmap' ||
-                Request::segment(2) == 'industry') {{ 'active open' }} @endif">
+        <li class="menu-item @if (Request::segment(2) == 'services') {{ 'active open' }} @endif">
             <a class="menu-link menu-toggle" href="javascript:void(0)">
                 <i class="menu-icon tf-icons bx bx-analyse"></i>
                 <div data-i18n="General Setting">Services</div>
@@ -168,6 +165,28 @@
                         href="{{ route('services.create') }}">
                         <i class="menu-icon tf-icons bx bxs-file-plus"></i>
                         <div data-i18n="Accordion">Create Service</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item @if (Request::segment(2) == 'country') {{ 'active open' }} @endif">
+            <a class="menu-link menu-toggle" href="javascript:void(0)">
+                <i class="menu-icon tf-icons bx bx-globe"></i>
+                <div data-i18n="General Setting">Country</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a class="menu-link {{ Request::segment(2) == 'country' && Request::segment(3) == '' ? 'active' : '' }}"
+                        href="{{ route('country.index') }}">
+                        <i class="menu-icon tf-icons bx bx-globe"></i>
+                        <div data-i18n="Accordion">All Country</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link {{ Request::segment(2) == 'country' && Request::segment(3) == 'create' ? 'active' : '' }}"
+                        href="{{ route('country.create') }}">
+                        <i class="menu-icon tf-icons bx bxs-file-plus"></i>
+                        <div data-i18n="Accordion">Create Country</div>
                     </a>
                 </li>
             </ul>

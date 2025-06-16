@@ -7,7 +7,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Reviews ({{ $review->total() }})</h5>
             <small class="text-muted float-end">
-                <a class="btn btn-primary" href="{{ route('review.create') }}"><i class="fa-solid fa-plus"></i>
+                <a class="btn btn-sm btn-primary" href="{{ route('review.create') }}"><i class="fa-solid fa-plus"></i>
                     Create</a>
             </small>
         </div>

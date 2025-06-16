@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('industries', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->longText('slug')->nullable();
             $table->string('image')->nullable();
-            $table->string('services')->nullable();
+            $table->string('banner')->nullable();
             $table->longText('description')->nullable();
+            $table->longText('short_description')->nullable();
+            $table->string('seo_title')->nullable();
+            $table->longText('seo_description')->nullable();
+            $table->longText('seo_schema')->nullable();
+            $table->string('seo_keywords')->nullable();
             $table->integer('order')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
@@ -28,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('industries');
+        Schema::dropIfExists('countries');
     }
 };

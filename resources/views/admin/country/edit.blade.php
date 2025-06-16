@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-@section('title', 'Edit ' . $page->name . ' - Visa Abroad')
+@section('title', 'Edit ' . $country->name . ' - Visa Abroad')
 
 @section('content')
     @include('admin.includes.message')
@@ -7,14 +7,15 @@
     <div class="content">
         <div class="card container-fluid mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Edit News - {{ $page->name }}</h5>
+                <h5 class="mb-0">Edit Country - {{ $country->name }}</h5>
                 <small class="text-muted float-end">
-                    <a class="btn btn-sm btn-primary" href="{{ route('page.index') }}"><i class="fa-solid fa-arrow-left"></i>
+                    <a class="btn btn-sm btn-primary" href="{{ route('country.index') }}"><i
+                            class="fa-solid fa-arrow-left"></i>
                         Back</a>
                 </small>
             </div>
             <div class="card-body p-0">
-                <form class="row" method="POST" action="{{ route('page.update', $page->id) }}"
+                <form class="row" method="POST" action="{{ route('country.update', $country->id) }}"
                     enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
@@ -25,7 +26,7 @@
                                     <div class="form-group mb-3">
                                         <label class="form-label" for="basic-default-fullname">Name</label>
                                         <input class="form-control @error('name') is-invalid @enderror" id=""
-                                            type="text" name="name" value="{{ old('name', $page->name) }}"
+                                            type="text" name="name" value="{{ old('name', $country->name) }}"
                                             placeholder="">
                                         @error('name')
                                             <div class="invalid-feedback" style="display: block;">
@@ -38,7 +39,7 @@
                                     <div class="form-group mb-3">
                                         <label class="form-label" for="basic-default-slug">slug</label>
                                         <input class="form-control @error('slug') is-invalid @enderror" id=""
-                                            type="text" name="slug" value="{{ old('slug', $page->slug) }}"
+                                            type="text" name="slug" value="{{ old('slug', $country->slug) }}"
                                             placeholder="">
                                         @error('slug')
                                             <div class="invalid-feedback" style="display: block;">
@@ -51,7 +52,7 @@
                             <div class="form-group mb-3">
                                 <label for="description">Description</label>
                                 <textarea class="form-control ckeditor br-8 @error('description') is-invalid @enderror" id="description"
-                                    name="description" rows="10" placeholder="Enter Description">{{ old('description', $page->description) }}</textarea>
+                                    name="description" rows="10" placeholder="Enter Description">{{ old('description', $country->description) }}</textarea>
                                 @error('description')
                                     <div class="invalid-feedback" style="display: block;">
                                         {{ $message }}
@@ -65,21 +66,21 @@
                                 <div class="form-group mb-3">
                                     <label for="seo_title">Seo Title</label>
                                     <input class="form-control br-8" type="text" name="seo_title"
-                                        value="{{ old('seo_title', $page->seo_title) }}" placeholder="Enter Seo Title">
+                                        value="{{ old('seo_title', $country->seo_title) }}" placeholder="Enter Seo Title">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="seo_description">Seo Description</label>
-                                    <textarea class="form-control br-8" name="seo_description" rows="4" placeholder="Enter Seo Description">{{ old('seo_description', $page->seo_description) }}</textarea>
+                                    <textarea class="form-control br-8" name="seo_description" rows="4" placeholder="Enter Seo Description">{{ old('seo_description', $country->seo_description) }}</textarea>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="seo_keywords">Seo Keywords</label>
                                     <input class="form-control br-8" type="text" name="seo_keywords"
-                                        value="{{ old('seo_keywords', $page->seo_keywords) }}"
+                                        value="{{ old('seo_keywords', $country->seo_keywords) }}"
                                         placeholder="Enter Seo Keywords">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="seo_schema">Seo Schema</label>
-                                    <textarea class="form-control br-8" name="seo_schema" rows="10" placeholder="Enter Seo Schema">{{ old('seo_schema', $page->seo_schema) }}</textarea>
+                                    <textarea class="form-control br-8" name="seo_schema" rows="10" placeholder="Enter Seo Schema">{{ old('seo_schema', $country->seo_schema) }}</textarea>
                                 </div>
                             </fieldset>
                         </div>
@@ -89,43 +90,12 @@
                             <div class="form-group mb-3 d-flex align-items-center">
                                 <label class="m-0 p-0">Status</label>
                                 <select class="form-select ms-5" id="status" name="status">
-                                    <option class="p-3" value="0" @if ($page->status == 0) selected @endif>
+                                    <option class="p-3" value="0" @if ($country->status == 0) selected @endif>
                                         Draft</option>
-                                    <option class="p-3"@if ($page->status == 1) selected @endif value="1">
+                                    <option class="p-3"@if ($country->status == 1) selected @endif value="1">
                                         Publish</option>
                                 </select>
                             </div>
-
-                            <hr class="shadow-sm">
-
-                            <div class="form-group mb-3 d-flex align-items-center">
-                                <label class="m-0 p-0">Template</label>
-                                <select class="form-select ms-5" id="template" name="template">
-                                    <option class="p-3" @if ($page->template == 0) selected @endif value="0">
-                                        Default Template</option>
-                                    <option class="p-3" @if ($page->template == 1) selected @endif value="1">
-                                        Side-To-Side</option>
-                                    <option class="p-3" @if ($page->template == 2) selected @endif
-                                        value="2">About Us</option>
-                                    <option class="p-3" @if ($page->template == 3) selected @endif
-                                        value="3">Contact Us</option>
-                                    <option class="p-3" @if ($page->template == 4) selected @endif
-                                        value="4">Services</option>
-                                    <option class="p-3" @if ($page->template == 5) selected @endif
-                                        value="5">Country</option>
-                                    <option class="p-3" @if ($page->template == 6) selected @endif
-                                        value="6">Teams</option>
-                                    <option class="p-3" @if ($page->template == 7) selected @endif
-                                        value="7">Reviews</option>
-                                    <option class="p-3" @if ($page->template == 8) selected @endif
-                                        value="8">Faqs</option>
-                                    <option class="p-3" @if ($page->template == 10) selected @endif
-                                        value="10">Blogs</option>
-                                    <option class="p-3" @if ($page->template == 12) selected @endif
-                                        value="12">Sitemap</option>
-                                </select>
-                            </div>
-
                             <hr class="shadow-sm">
 
                             <div class="form-group mb-3 mt-2">
@@ -137,9 +107,9 @@
                                             class="upload-media border border-2 d-flex justify-content-center align-items-center mb-3">
                                             <div
                                                 class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
-                                                @if ($page->banner)
+                                                @if ($country->banner)
                                                     @php
-                                                        $banner = get_media($page->banner ?? '');
+                                                        $banner = get_media($country->banner ?? '');
                                                     @endphp
                                                     <img id="banner_img" src="{{ asset($banner->fullurl) }}"
                                                         alt="{{ $banner->alt }}">
@@ -155,7 +125,7 @@
                                         href="javascript:void(0)"><i class="fa fa-trash"></i> Delete</a>
 
                                     <input class="" id="banner_id" type="hidden" name="banner"
-                                        value="{{ old('banner', $page->banner) }}">
+                                        value="{{ old('banner', $country->banner) }}">
                                     @error('banner')
                                         <div class="invalid-feedback" style="display: block;">
                                             {{ $message }}
@@ -175,9 +145,9 @@
                                             class="upload-media border border-2 d-flex justify-content-center align-items-center mb-3">
                                             <div
                                                 class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
-                                                @if ($page->image)
+                                                @if ($country->image)
                                                     @php
-                                                        $feature = get_media($page->image ?? '');
+                                                        $feature = get_media($country->image ?? '');
                                                     @endphp
                                                     @if ($feature)
                                                         <img id="feature_img" src="{{ asset($feature->fullurl) }}"
@@ -199,7 +169,7 @@
                                         href="javascript:void(0)"><i class="fa fa-trash"></i> Delete</a>
 
                                     <input class="" id="feature_id" type="hidden" name="image"
-                                        value="{{ old('image', $page->image) }}">
+                                        value="{{ old('image', $country->image) }}">
                                     @error('image')
                                         <div class="invalid-feedback" style="display: block;">
                                             {{ $message }}
@@ -207,12 +177,11 @@
                                     @enderror
                                 </div>
                             </div>
-
                             <hr class="shadow-sm">
 
                             <div class="card-footers d-flex justify-content-between">
-                                <a class="btn btn-sm btn-success" href="{{ route('pagesingle', $page->slug) }}"
-                                    target="_blank"><i class="fa-solid fa-eye"></i> View</a>
+                                {{-- <a class="btn btn-sm btn-success" href="{{ route('countrysingle', $country->slug) }}"
+                                    target="_blank"><i class="fa-solid fa-eye"></i> View</a> --}}
                                 <button class="btn btn-sm btn-primary" type="submit"><i class="fa-solid fa-rotate"></i>
                                     Update</button>
                             </div>

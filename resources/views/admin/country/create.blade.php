@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-@section('title', 'Create New Page - Visa Abroad')
+@section('title', 'Create New Country - Visa Abroad')
 
 @section('content')
     @include('admin.includes.message')
@@ -7,14 +7,15 @@
     <div class="content">
         <div class="card container-fluid mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Create Page</h5>
+                <h5 class="mb-0">Create Country</h5>
                 <small class="text-muted float-end">
-                    <a class="btn btn-sm btn-primary" href="{{ route('page.index') }}"><i class="fa-solid fa-arrow-left"></i>
+                    <a class="btn btn-sm btn-primary" href="{{ route('country.index') }}"><i
+                            class="fa-solid fa-arrow-left"></i>
                         Back</a>
                 </small>
             </div>
             <div class="card-body p-0">
-                <form class="row" method="POST" action="{{ route('page.store') }}" enctype="multipart/form-data">
+                <form class="row" method="POST" action="{{ route('country.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-9">
                         <div class="card card-body main-description shadow br-8 p-4">
@@ -40,6 +41,7 @@
                             </div>
                         </div>
                         <div class="card card-body seo my-5 shadow br-8 p-4">
+
                             <fieldset class="border p-3">
                                 <legend class="float-none w-auto legend-title">SEO</legend>
                                 <div class="form-group mb-3">
@@ -48,7 +50,7 @@
                                         value="{{ old('seo_title') }}" placeholder="Enter Seo Title">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="seo_description">Seo Description</label>
+                                    <label for="seo_description">Description</label>
                                     <textarea class="form-control br-8" name="seo_description" rows="4" placeholder="Enter Seo Description">{{ old('seo_description') }}</textarea>
                                 </div>
                                 <div class="form-group mb-3">
@@ -76,20 +78,14 @@
                             <hr class="shadow-sm">
 
                             <div class="form-group mb-3 d-flex align-items-center">
-                                <label class="m-0 p-0">Template</label>
-                                <select class="form-select ms-3" id="template" name="template">
-                                    <option class="p-3" value="0">Default Template</option>
-                                    <option class="p-3" value="1">Side-To-Side</option>
-                                    <option class="p-3" value="2">About Us</option>
-                                    <option class="p-3" value="3">Contact Us</option>
-                                    <option class="p-3" value="4">Services</option>
-                                    <option class="p-3" value="5">Country</option>
-                                    <option class="p-3" value="6">Teams</option>
-                                    <option class="p-3" value="7">Reviews</option>
-                                    <option class="p-3" value="8">Faqs</option>
-                                    <option class="p-3" value="10">Blogs</option>
-                                    <option class="p-3" value="12">Sitemap</option>
-                                </select>
+                                <label for="order">Order</label>
+                                <input class="form-control ms-5 @error('order') is-invalid @enderror" type="number"
+                                    name="order" value="{{ old('order') }}" placeholder="Enter Order">
+                                @error('order')
+                                    <div class="invalid-feedback" style="display: block;">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <hr class="shadow-sm">
@@ -104,13 +100,13 @@
                                             <div
                                                 class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
                                                 <img class="custom-width" id="banner_img"
-                                                    src="{{ asset('admin/assets/images/upload.png') }}"
-                                                    alt="upload-image">
+                                                    src="{{ asset('admin/assets/images/upload.png') }}" alt="upload-image">
                                             </div>
                                         </div>
                                     </a>
-                                    <a class="btn btn-sm btn-danger d-none" id="banner_remove"
-                                        href="javascript:void(0)"><i class="fa fa-trash"></i> Delete</a>
+                                    <a class="btn btn-sm btn-danger d-none" id="banner_remove" href="javascript:void(0)"><i
+                                            class="fa fa-trash"></i> Delete</a>
+
                                     <input class="" id="banner_id" type="hidden" name="banner"
                                         value="{{ old('banner') }}">
                                 </div>

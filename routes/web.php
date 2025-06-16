@@ -31,6 +31,7 @@ use App\Http\Controllers\Admin\BlogcategoryController;
 use App\Http\Controllers\Admin\RecruitmentsController;
 use App\Http\Controllers\Admin\UserRegisterController;
 use App\Http\Controllers\Admin\ClientRegistrationController;
+use App\Http\Controllers\Admin\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,6 +108,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('progress', ProgressController::class);
     Route::resource('branch', BranchController::class);
     Route::resource('popup', PopupController::class);
+    Route::resource('country', CountryController::class);
 
     /*
     |--------------------------------------------------------------------------

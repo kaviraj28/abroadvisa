@@ -146,10 +146,7 @@ class FrontendController extends Controller
     {
         $content = Services::where('slug', $slug)->where('status', 1)->first();
         if ($content) {
-            $services = Services::where('status', 1)->where('id', '!=', $content->id)->limit(6)->get();
-            $roadmapChunks = $content->roadmap->chunk(ceil($content->roadmap->count() / 2));
-            $pricing = Pricing::where('status', 1)->where('services', $content->id)->limit(3)->get();
-            return view('frontend.service.show', compact(['content', 'services', 'pricing', 'roadmapChunks']));
+            return view('frontend.service.show', compact(['content']));
         } else {
             return redirect()->route('error');
         }

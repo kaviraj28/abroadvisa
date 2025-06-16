@@ -121,7 +121,8 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Menus</h5>
                 <small class="text-muted float-end">
-                    <a class="btn btn-primary" href="{{ route('dashboard') }}"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                    <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}"><i class="fa-solid fa-arrow-left"></i>
+                        Back</a>
                 </small>
             </div>
             <div class="card-body p-0">
@@ -174,7 +175,7 @@
                                                 <div class="item-list-footer">
                                                     <label class="btn btn-sm btn-default"><input id="select-all-posts"
                                                             type="checkbox"> Select All</label>
-                                                    <button class="pull-right btn btn-primary btn-sm" id="add-posts"
+                                                    <button class="pull-right btn btn-sm btn-primary btn-sm" id="add-posts"
                                                         type="button">Add to Menu</button>
                                                 </div>
                                             </div>
@@ -199,7 +200,7 @@
                                                 <div class="item-list-footer">
                                                     <label class="btn btn-sm btn-default"><input id="select-all-pages"
                                                             type="checkbox"> Select All</label>
-                                                    <button class="pull-right btn btn-primary btn-sm" id="add-pages"
+                                                    <button class="pull-right btn btn-sm btn-primary btn-sm" id="add-pages"
                                                         type="button">Add to Menu</button>
                                                 </div>
                                             </div>
@@ -225,8 +226,8 @@
                                                 <div class="item-list-footer">
                                                     <label class="btn btn-sm btn-default"><input id="select-all-services"
                                                             type="checkbox"> Select All</label>
-                                                    <button class="pull-right btn btn-primary btn-sm" id="add-services"
-                                                        type="button">Add to Menu</button>
+                                                    <button class="pull-right btn btn-sm btn-primary btn-sm"
+                                                        id="add-services" type="button">Add to Menu</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -254,8 +255,8 @@
                                                 </div>
                                             </div>
                                             <div class="item-list-footer">
-                                                <button class="pull-right btn btn-primary btn-sm" id="add-custom-link"
-                                                    type="button">Add to Menu</button>
+                                                <button class="pull-right btn btn-sm btn-primary btn-sm"
+                                                    id="add-custom-link" type="button">Add to Menu</button>
                                             </div>
                                         </div>
                                     </div>
@@ -281,7 +282,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 text-right">
-                                            <button class="btn btn-primary">Create Menu</button>
+                                            <button class="btn btn-sm btn-primary">Create Menu</button>
                                         </div>
                                     </div>
                                 </form>

@@ -1,5 +1,5 @@
 @extends('layouts.admin.master')
-@section('title', 'Website Settings - Visa Abroad')
+@section('title', 'Website Settings')
 
 @section('content')
     @include('admin.includes.message')
@@ -91,9 +91,15 @@
                                                                                     get_field('site_fav_icon') ?? '',
                                                                                 );
                                                                             @endphp
-                                                                            <img id="banner_img"
-                                                                                src="{{ asset($banner->fullurl) }}"
-                                                                                alt="{{ $banner->alt }}">
+                                                                            @if ($banner)
+                                                                                <img id="banner_img"
+                                                                                    src="{{ asset($banner->fullurl) }}"
+                                                                                    alt="{{ $banner->alt }}">
+                                                                            @else
+                                                                                <img id="feature_img"
+                                                                                    src="{{ asset('admin/assets/images/upload.png') }}"
+                                                                                    alt="upload-image">
+                                                                            @endif
                                                                         @else
                                                                             <img class="custom-width" id="banner_img"
                                                                                 src="{{ asset('admin/assets/images/upload.png') }}"
@@ -133,9 +139,15 @@
                                                                                     get_field('site_footer_logo') ?? '',
                                                                                 );
                                                                             @endphp
-                                                                            <img id="footer_img"
-                                                                                src="{{ asset($footer->fullurl) }}"
-                                                                                alt="{{ $footer->alt }}">
+                                                                            @if ($footer)
+                                                                                <img id="footer_img"
+                                                                                    src="{{ asset($footer->fullurl) }}"
+                                                                                    alt="{{ $footer->alt }}">
+                                                                            @else
+                                                                                <img id="feature_img"
+                                                                                    src="{{ asset('admin/assets/images/upload.png') }}"
+                                                                                    alt="upload-image">
+                                                                            @endif
                                                                         @else
                                                                             <img class="custom-width" id="footer_img"
                                                                                 src="{{ asset('admin/assets/images/upload.png') }}"
@@ -175,9 +187,15 @@
                                                                                     get_field('site_icon_image') ?? '',
                                                                                 );
                                                                             @endphp
-                                                                            <img id="fimage_img"
-                                                                                src="{{ asset($fimage->fullurl) }}"
-                                                                                alt="{{ $fimage->alt }}">
+                                                                            @if ($fimage)
+                                                                                <img id="fimage_img"
+                                                                                    src="{{ asset($fimage->fullurl) }}"
+                                                                                    alt="{{ $fimage->alt }}">
+                                                                            @else
+                                                                                <img id="feature_img"
+                                                                                    src="{{ asset('admin/assets/images/upload.png') }}"
+                                                                                    alt="upload-image">
+                                                                            @endif
                                                                         @else
                                                                             <img class="custom-width" id="fimage_img"
                                                                                 src="{{ asset('admin/assets/images/upload.png') }}"
@@ -197,7 +215,7 @@
                                                                 <div class="invalid-feedback" style="display: block;">
                                                                     {{ $message }}
                                                                 </div>
-                                                            @enderror
+                                                            @enderror-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -227,8 +245,7 @@
                                                     <div class="form-group mb-3">
                                                         <label for="site_phone_two">Phone Number(2)</label>
                                                         <input class="form-control br-8" type="tel" two
-                                                            name="site_phone_two"
-                                                            value="{{ get_field('site_phone_two') }}"
+                                                            name="site_phone_2" value="{{ get_field('site_phone_two') }}"
                                                             placeholder="Enter Phone Number">
                                                     </div>
                                                 </div>
@@ -236,8 +253,7 @@
                                                     <div class="form-group mb-3">
                                                         <label for="site_email_two">Email(2)</label>
                                                         <input class="form-control br-8" type="email" two
-                                                            name="site_email_two"
-                                                            value="{{ get_field('site_email_two') }}"
+                                                            name="site_email_2" value="{{ get_field('site_email_two') }}"
                                                             placeholder="Enter Email">
                                                     </div>
                                                 </div>
@@ -258,13 +274,7 @@
                                                             placeholder="Enter Location Url">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group mb-3">
-                                                        <label for="site_experiance">Site Experiance</label>
-                                                        <textarea class="form-control br-8" name="site_experiance" rows="4" placeholder="Enter Site experiance">{{ get_field('site_experiance') }}</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <div class="form-group mb-3">
                                                         <label for="site_copyright">Site Copyright</label>
                                                         <textarea class="form-control br-8" name="site_copyright" rows="4" placeholder="Enter Site Copyright">{{ get_field('site_copyright') }}</textarea>
@@ -334,261 +344,20 @@
                                                         <textarea class="form-control ckeditor br-8" name="homepage_description" rows="4">{{ get_field('homepage_description') }}</textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
-                                                    <fieldset class="border p-3">
-                                                        <legend class="float-none w-auto legend-title">Banner</legend>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="home_banner_small_title">Small
-                                                                        Title</label>
-                                                                    <input class="form-control br-8" type="text"
-                                                                        name="home_banner_small_title"
-                                                                        value="{{ old('home_banner_small_title', get_field('home_banner_small_title')) }}"
-                                                                        placeholder="Enter Small Title">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="home_banner_big_title">Big Title</label>
-                                                                    <input class="form-control br-8" type="text"
-                                                                        name="home_banner_big_title"
-                                                                        value="{{ old('home_banner_big_title', get_field('home_banner_big_title')) }}"
-                                                                        placeholder="Enter Big Title">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="home_banner_description">Banner
-                                                                        Description</label>
-                                                                    <textarea class="form-control br-8" name="home_banner_description" rows="4"
-                                                                        placeholder="Enter Banner Description">{{ old('home_banner_description', get_field('home_banner_description')) }}</textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="home_banner_link_text">Link Text</label>
-                                                                    <input class="form-control br-8" type="text"
-                                                                        name="home_banner_link_text"
-                                                                        value="{{ old('home_banner_link_text', get_field('home_banner_link_text')) }}"
-                                                                        placeholder="Enter Link Text">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="home_banner_link_url">Link URL</label>
-                                                                    <input class="form-control br-8" type="text"
-                                                                        name="home_banner_link_url"
-                                                                        value="{{ old('home_banner_link_url', get_field('home_banner_link_url')) }}"
-                                                                        placeholder="Link URL">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <label class="d-block">Dispaly Social</label>
-                                                                <div class="form-check form-check-inline mt-1">
-                                                                    <input class="form-check-input" id="inlineRadio1"
-                                                                        type="radio" name="home_banner_social"
-                                                                        value="1"
-                                                                        @if (get_field('home_banner_social') == 1) checked @endif />
-                                                                    <label class="form-check-label"
-                                                                        for="inlineRadio1">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" id="inlineRadio2"
-                                                                        type="radio" name="home_banner_social"
-                                                                        value="0"
-                                                                        @if (get_field('home_banner_social') == 0) checked @endif />
-                                                                    <label class="form-check-label"
-                                                                        for="inlineRadio2">No</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-3">
+                                                        <label for="blog_title">Enter Blog Title</label>
+                                                        <input class="form-control br-8" type="text" name="blog_title"
+                                                            value="{{ get_field('blog_title') }}"
+                                                            placeholder="Enter Blog Title">
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Reviews
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="review_title">Review Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="review_title"
-                                                                        value="{{ get_field('review_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="review_description">Review Info</label>
-                                                                    <textarea class="form-control br-8" name="review_description" rows="4" placeholder="Enter Something ...">{{ get_field('review_description') ?? '' }}</textarea>
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="reviews">Select
-                                                                        Reviews</label>
-                                                                    <select class="form-control" id="reviews"
-                                                                        name="reviews[]"
-                                                                        placeholder="This is a placeholder" multiple>
-                                                                        @if ($reviews->isNotEmpty())
-                                                                            @foreach ($reviews as $pck)
-                                                                                <option value="{{ $pck->id }}"
-                                                                                    {{ get_field('reviews') && in_array($pck->id, get_field('reviews')) ? ' selected' : '' }}>
-                                                                                    {{ $pck->name }}</option>
-                                                                            @endforeach
-                                                                        @endif
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Services
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="service_title">Service Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="service_title"
-                                                                        value="{{ get_field('service_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="service_description">Service Info</label>
-                                                                    <textarea class="form-control br-8" name="service_description" rows="4" placeholder="Enter Something ...">{{ get_field('service_description') ?? '' }}</textarea>
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="services">Select
-                                                                        Service</label>
-                                                                    <select class="form-control" id="services"
-                                                                        name="services[]"
-                                                                        placeholder="This is a placeholder" multiple>
-                                                                        @if ($services->isNotEmpty())
-                                                                            @foreach ($services as $pck)
-                                                                                <option value="{{ $pck->id }}"
-                                                                                    {{ get_field('services') && in_array($pck->id, get_field('services')) ? ' selected' : '' }}>
-                                                                                    {{ $pck->name }}</option>
-                                                                            @endforeach
-                                                                        @endif
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Teams
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="team_title">Team Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="team_title"
-                                                                        value="{{ get_field('team_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="team_description">Team Info</label>
-                                                                    <textarea class="form-control br-8" name="team_description" rows="4" placeholder="Enter Something ...">{{ get_field('team_description') ?? '' }}</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Blogs
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="blog_title">Blog Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="blog_title"
-                                                                        value="{{ get_field('blog_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="blog_description">Blog Info</label>
-                                                                    <textarea class="form-control br-8" name="blog_description" rows="4" placeholder="Enter Something ...">{{ get_field('blog_description') ?? '' }}</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Projects
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="project_title">Project Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="project_title"
-                                                                        value="{{ get_field('project_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="project_description">Project Info</label>
-                                                                    <textarea class="form-control br-8" name="project_description" rows="4" placeholder="Enter Something ...">{{ get_field('project_description') ?? '' }}</textarea>
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="projects">Select
-                                                                        Projects</label>
-                                                                    <select class="form-control" id="projects"
-                                                                        name="projects[]"
-                                                                        placeholder="This is a placeholder" multiple>
-                                                                        @if ($projects->isNotEmpty())
-                                                                            @foreach ($projects as $pck)
-                                                                                <option value="{{ $pck->id }}"
-                                                                                    {{ get_field('projects') && in_array($pck->id, get_field('projects')) ? ' selected' : '' }}>
-                                                                                    {{ $pck->name }}</option>
-                                                                            @endforeach
-                                                                        @endif
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Progress
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="progress_title">Progress Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="progress_title"
-                                                                        value="{{ get_field('progress_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="progress_description">Progress Info</label>
-                                                                    <textarea class="form-control br-8" name="progress_description" rows="4" placeholder="Enter Something ...">{{ get_field('progress_description') ?? '' }}</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <fieldset class="border p-3 mb-3">
-                                                        <legend class="float-none w-auto legend-title">Counters
-                                                        </legend>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group mb-3">
-                                                                    <label for="counter_title">Counter Title</label>
-                                                                    <input class="form-control" type="text"
-                                                                        name="counter_title"
-                                                                        value="{{ get_field('counter_title') ?? '' }}">
-                                                                </div>
-                                                                <div class="form-group mb-3">
-                                                                    <label for="counter_description">Counter Info</label>
-                                                                    <textarea class="form-control br-8" name="counter_description" rows="4" placeholder="Enter Something ...">{{ get_field('counter_description') ?? '' }}</textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
+                                                    <div class="form-group mb-3">
+                                                        <label for="blog_description">Enter Blog
+                                                            Description</label>
+                                                        <textarea class="form-control br-8" name="blog_description" rows="4">{{ get_field('blog_description') }}</textarea>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <fieldset class="border p-3">
@@ -652,23 +421,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        function selfChoice(value) {
-            var option = new Choices(
-                value, {
-                    allowHTML: true,
-                    removeItemButton: true,
-                    fuseOptions: {
-                        includeScore: true
-                    },
-                }
-            );
-        }
-        selfChoice('#reviews');
-        selfChoice('#services');
-        selfChoice('#projects');
-    </script>
 @endsection

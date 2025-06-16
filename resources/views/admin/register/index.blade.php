@@ -9,7 +9,7 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Register</h5>
                 <small class="text-muted float-end">
-                    <a class="btn btn-primary" href="{{ route('dashboard') }}"><i class="fa-solid fa-arrow-left"></i>
+                    <a class="btn btn-sm btn-primary" href="{{ route('dashboard') }}"><i class="fa-solid fa-arrow-left"></i>
                         Back</a>
                 </small>
             </div>
@@ -76,7 +76,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button class="btn btn-primary" type="submit">
+                                <button class="btn btn-sm btn-primary" type="submit">
                                     {{ __('Register') }}
                                 </button>
                             </div>

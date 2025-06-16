@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\Member;
-use App\Models\Project;
 use App\Models\Review;
 use App\Models\Services;
 use App\Models\Setting;
@@ -27,8 +26,7 @@ class SettingController extends Controller
         $teams = Member::where('status', 1)->get();
         $faqs = Faq::where('status', 1)->get();
         $services = Services::where('status', 1)->get();
-        $projects = Project::where('status', 1)->get();
-        return view('admin.setting.edit', compact(['settings', 'reviews', 'services', 'teams', 'faqs', 'projects']));
+        return view('admin.setting.edit', compact(['settings', 'reviews', 'services', 'teams', 'faqs']));
     }
 
     /**
