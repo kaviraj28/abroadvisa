@@ -27,7 +27,7 @@
                                         <div class="tab-pane fade show active" id="v-pills-global" role="tabpanel"
                                             aria-labelledby="v-pills-global-tab">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group mb-3 mt-2">
                                                         <label for="image">Site Main Logo</label>
                                                         <div class="custom-file">
@@ -75,7 +75,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group mb-3 mt-2">
                                                         <label for="banner">Site Fav Icon</label>
                                                         <div class="custom-file">
@@ -123,7 +123,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-group mb-3 mt-2">
                                                         <label for="footer">Site Footer Logo</label>
                                                         <div class="custom-file">
@@ -168,54 +168,6 @@
                                                                     {{ $message }}
                                                                 </div>
                                                             @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group mb-3 mt-2">
-                                                        <label for="fimage">Site Contact Image</label>
-                                                        <div class="custom-file">
-                                                            <a class="fimage-modal" data-bs-toggle="modal"
-                                                                data-bs-target="#fimageModel" href="javascript:void(0)">
-                                                                <div
-                                                                    class="upload-media border border-2 d-flex justify-content-center align-items-center mb-3">
-                                                                    <div
-                                                                        class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
-                                                                        @if (get_field('site_icon_image'))
-                                                                            @php
-                                                                                $fimage = get_media(
-                                                                                    get_field('site_icon_image') ?? '',
-                                                                                );
-                                                                            @endphp
-                                                                            @if ($fimage)
-                                                                                <img id="fimage_img"
-                                                                                    src="{{ asset($fimage->fullurl) }}"
-                                                                                    alt="{{ $fimage->alt }}">
-                                                                            @else
-                                                                                <img id="feature_img"
-                                                                                    src="{{ asset('admin/assets/images/upload.png') }}"
-                                                                                    alt="upload-image">
-                                                                            @endif
-                                                                        @else
-                                                                            <img class="custom-width" id="fimage_img"
-                                                                                src="{{ asset('admin/assets/images/upload.png') }}"
-                                                                                alt="upload-image">
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                            <a class="btn btn-sm btn-danger d-none" id="fimage_remove"
-                                                                href="javascript:void(0)"><i class="fa fa-trash"></i>
-                                                                Delete</a>
-
-                                                            <input class="" id="fimage_id" type="hidden"
-                                                                name="site_icon_image"
-                                                                value="{{ old('site_icon_image', get_field('site_icon_image')) }}">
-                                                            @error('site_icon_image')
-                                                                <div class="invalid-feedback" style="display: block;">
-                                                                    {{ $message }}
-                                                                </div>
-                                                            @enderror-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -276,7 +228,7 @@
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-3">
-                                                        <label for="site_copyright">Site Copyright</label>
+                                                        <label for="site_copyright">Open Time</label>
                                                         <textarea class="form-control br-8" name="site_copyright" rows="4" placeholder="Enter Site Copyright">{{ get_field('site_copyright') }}</textarea>
                                                     </div>
                                                 </div>

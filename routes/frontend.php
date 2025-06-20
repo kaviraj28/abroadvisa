@@ -25,12 +25,9 @@ Route::get('/blogs/{slug}', [FrontendController::class, 'blogsingle'])->name('bl
 Route::get('/categories/{slug}', [FrontendController::class, 'categorysingle'])->name('categorysingle');
 
 Route::get('/services/{slug}', [FrontendController::class, 'servicesingle'])->name('servicesingle');
-
-// Route::get('/projects/{slug}', [FrontendController::class, 'projectsingle'])->name('projectsingle');
-// Route::get('/projectcategory/{slug}', [FrontendController::class, 'projectcategory'])->name('projectcategory');
+Route::get('/country/{slug}', [FrontendController::class, 'countrysingle'])->name('countrysingle');
 
 Route::get('/careers/{slug}', [FrontendController::class, 'careersingle'])->name('careersingle');
-Route::get('/pricing/{slug}', [FrontendController::class, 'pricingsingle'])->name('pricingsingle');
 
 
 Route::post('/inquiry', [ContactsController::class, 'inquiry'])->name('inquiry');

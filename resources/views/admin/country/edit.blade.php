@@ -180,8 +180,8 @@
                             <hr class="shadow-sm">
 
                             <div class="card-footers d-flex justify-content-between">
-                                {{-- <a class="btn btn-sm btn-success" href="{{ route('countrysingle', $country->slug) }}"
-                                    target="_blank"><i class="fa-solid fa-eye"></i> View</a> --}}
+                                <a class="btn btn-sm btn-success" href="{{ route('countrysingle', $country->slug) }}"
+                                    target="_blank"><i class="fa-solid fa-eye"></i> View</a>
                                 <button class="btn btn-sm btn-primary" type="submit"><i class="fa-solid fa-rotate"></i>
                                     Update</button>
                             </div>

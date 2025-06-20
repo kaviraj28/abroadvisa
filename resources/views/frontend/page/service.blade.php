@@ -20,27 +20,31 @@
         'parentname' => '',
         'parentlink' => '',
     ])
-
     @if ($services->isNotEmpty())
-        <section class="seo-area pt-60 pb-60 bg-white">
-            <div class="container-xxl d_container">
-                <div class="row justify-content-center">
-                    @foreach ($services as $value)
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="tpseo p-relative mb-40">
-                                <div class="tpseo-bg tpseo-bg3"></div>
-                                <div class="tpseo-content">
-                                    <h4 class="tpseo-title mb-15">{{ $value->name ?? '' }}</h4>
-                                    <div class="tpseo-info">
-                                        <p>{{ stripLetters($value->description, 50, '...') }}</p>
-                                        <div class="tpseo-details">
-                                            <a href="{{ route('servicesingle', $value->slug) }}">Learn More <i
-                                                    class="fa-light fa-arrow-right"></i></a>
-                                        </div>
+        <section class="coaching-section bg-color-1">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    @foreach ($services as $key => $data)
+                        <div class="col-lg-3 col-md-6 col-sm-12 coaching-block">
+                            <div class="coaching-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                                data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <figure class="image">
+                                        {!! get_image($data->image) !!}
+                                    </figure>
+                                    <div class="content-box">
+                                        <div class="icon-box"><a href="{{ route('servicesingle', $data->slug) }}"><i
+                                                    class="flaticon-diagonal-arrow-1"></i></a></div>
+                                        <h5><a href="{{ route('servicesingle', $data->slug) }}">{{ $data->name ?? '' }}</a>
+                                        </h5>
                                     </div>
-                                </div>
-                                <div class="tpseo-thumb w-img d-flex justify-content-center">
-                                    {!! get_image($value->image) !!}
+                                    <div class="overlay-content">
+                                        <div class="icon-box"><a href="{{ route('servicesingle', $data->slug) }}"><i
+                                                    class="flaticon-diagonal-arrow-1"></i></a></div>
+                                        <h5><a href="{{ route('servicesingle', $data->slug) }}">{{ $data->name ?? '' }}</a>
+                                        </h5>
+                                        <p>{{ stripLetters($data->description, 60, '...') }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -49,5 +53,4 @@
             </div>
         </section>
     @endif
-
 @endsection

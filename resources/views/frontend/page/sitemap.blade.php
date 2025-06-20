@@ -67,9 +67,9 @@
             <priority>0.8</priority>
         </url>
     @endforeach
-    @foreach ($all_projects as $blog)
+    @foreach ($all_countrys as $blog)
         <url>
-            <loc>{{ route('projectsingle', $blog->slug) }}</loc>
+            <loc>{{ route('countrysingle', $blog->slug) }}</loc>
             <lastmod>{{ $blog->created_at->tz('UTC')->toAtomString() }}</lastmod>
             @if ($blog->image)
                 <image:image>

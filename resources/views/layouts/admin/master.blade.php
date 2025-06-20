@@ -66,12 +66,13 @@
             width: 200px;
             height: 200px;
             overflow: hidden;
+            background: #e7fff0;
         }
 
         .thumbnails.media-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: scale-down;
             cursor: pointer;
         }
 

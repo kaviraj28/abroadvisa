@@ -4,15 +4,16 @@
 @section('content')
     <style>
         .media-wrapper {
-            width: 1000px;
-            height: 700px;
+            width: 100%;
+            height: 650px;
             overflow: hidden;
+            background: #e7fff0;
         }
 
         .media-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: scale-down;
         }
     </style>
     <div class="card">
@@ -42,7 +43,20 @@
                                 @if (File::exists(public_path($gallery->fullurl)))
                                     @php
                                         $exts = explode('.', $gallery->fullurl)[1];
-                                        if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC'])) {
+                                        if (
+                                            in_array($exts, [
+                                                'png',
+                                                'jpg',
+                                                'jpeg',
+                                                'webp',
+                                                'heic',
+                                                'PNG',
+                                                'JPG',
+                                                'JPEG',
+                                                'WEBP',
+                                                'HEIC',
+                                            ])
+                                        ) {
                                             $height = $gallery->height ?? '';
                                             $width = $gallery->width ?? '';
                                         }
@@ -117,7 +131,7 @@
                                     <label class="col-form-label" for="media-alt">Alt:</label>
                                     <input class="form-control media-alt" type="text" name="alt">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3 d-flex gap-2">
                                     <button class="btn btn-sm btn-primary" type="submit"><i class="fa-solid fa-rotate"></i>
                                         Submit</button>
                                     <button class="btn btn-sm btn-danger media-id delete-single-document" value=""><i

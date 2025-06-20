@@ -6,9 +6,7 @@ use App\Models\MenuLocation;
 use App\Models\Setting;
 use Illuminate\Support\Str;
 
-
-
-function getMenus($id)
+function menuData($id)
 {
     $nav = MenuLocation::where('location', $id)->first();
     if ($nav) {
@@ -54,6 +52,8 @@ function getMenus($id)
         return $sitemenu;
     }
 }
+
+include 'menu.php';
 
 if (!function_exists('get_field')) {
     function get_field($key = null)

@@ -79,9 +79,9 @@
                                             class="upload-media border border-2 d-flex justify-content-center align-items-center mb-3">
                                             <div
                                                 class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
-                                                @if ($member->icon)
+                                                @if ($counter->icon)
                                                     @php
-                                                        $feature = get_media($member->icon ?? '');
+                                                        $feature = get_media($counter->icon ?? '');
                                                     @endphp
                                                     @if ($feature)
                                                         <img id="feature_img" src="{{ asset($feature->fullurl) }}"
@@ -103,7 +103,7 @@
                                             class="fa fa-trash"></i> Delete</a>
 
                                     <input class="" id="feature_id" type="hidden" name="icon"
-                                        value="{{ old('icon', $member->icon) }}">
+                                        value="{{ old('icon', $counter->icon) }}">
                                     @error('icon')
                                         <div class="invalid-feedback" style="display: block;">
                                             {{ $message }}

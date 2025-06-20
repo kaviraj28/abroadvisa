@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DOMXPath;
-use DOMDocument;
 use App\Models\Faq;
 use App\Models\News;
 use App\Models\Page;
@@ -13,13 +11,11 @@ use App\Models\Member;
 use App\Models\Review;
 use App\Models\Careers;
 use App\Models\Counter;
+use App\Models\Country;
 use App\Models\Partner;
-use App\Models\Pricing;
 use App\Models\Project;
 use App\Models\Progress;
 use App\Models\Services;
-use App\Models\Technology;
-use App\Models\ClientRegistration;
 
 class FrontendController extends Controller
 {
@@ -31,8 +27,9 @@ class FrontendController extends Controller
         $reviews = Review::where('status', 1)->oldest('order')->limit(8)->get();
         $progress = Progress::where('status', 1)->oldest('order')->get();
         $popups = Popup::where('status', 1)->oldest('order')->get();
+        $countries = Country::where('status', 1)->oldest('order')->limit(8)->get();
 
-        return view('frontend.home.index', compact(['blogs', 'counters', 'progress', 'popups', 'reviews', 'services']));
+        return view('frontend.home.index', compact(['blogs', 'counters', 'progress', 'popups', 'reviews', 'services', 'countries']));
     }
 
     public function error()
@@ -61,15 +58,8 @@ class FrontendController extends Controller
                 $services = Services::where('status', 1)->oldest('order')->get();
                 return view('frontend.page.service', compact(['content', 'services']));
             } elseif ($content->template == 5) {
-                $projects = Services::where('status', 1)->oldest('order')->whereHas('projects')
-                    ->with(['projects' => function ($query) {
-                        $query->limit(5);
-                    }])
-                    ->get()
-                    ->mapWithKeys(function ($category) {
-                        return [$category->name => $category->projects->toArray()];
-                    });
-                return view('frontend.page.project', compact(['content', 'projects']));
+                $countries = Country::where('status', 1)->oldest('order')->get();
+                return view('frontend.page.country', compact(['content', 'countries']));
             } elseif ($content->template == 6) {
 
                 $teams = Member::oldest('order')->get();
@@ -94,9 +84,9 @@ class FrontendController extends Controller
                 $all_blogs = News::get();
                 $all_pages = Page::where('status', 1)->get();
                 $all_servs = Services::where('status', 1)->get();
-                $all_projects = Project::where('status', 1)->get();
+                $all_countrys = Country::where('status', 1)->get();
 
-                return response()->view('frontend.page.sitemap', compact(['all_blogs', 'all_pages', 'all_servs', 'all_projects']))->header('Content-Type', 'text/xml');
+                return response()->view('frontend.page.sitemap', compact(['all_blogs', 'all_pages', 'all_servs', 'all_countrys']))->header('Content-Type', 'text/xml');
             } else {
                 $blogs = News::where('status', 1)->limit(5)->get();
 
@@ -147,6 +137,16 @@ class FrontendController extends Controller
         $content = Services::where('slug', $slug)->where('status', 1)->first();
         if ($content) {
             return view('frontend.service.show', compact(['content']));
+        } else {
+            return redirect()->route('error');
+        }
+    }
+
+    public function countrysingle($slug)
+    {
+        $content = Country::where('slug', $slug)->where('status', 1)->first();
+        if ($content) {
+            return view('frontend.country.show', compact(['content']));
         } else {
             return redirect()->route('error');
         }

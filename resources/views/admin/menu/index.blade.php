@@ -583,9 +583,7 @@
                                             <label><input type="radio" name="location" value="1"
                                                     @if ($desiredMenu->location == 1) checked @endif> Main Nav</label>
                                             <label><input type="radio" name="location" value="2"
-                                                    @if ($desiredMenu->location == 2) checked @endif> Footer One</label>
-                                            <label><input type="radio" name="location" value="3"
-                                                    @if ($desiredMenu->location == 3) checked @endif> Footer Two</label>
+                                                    @if ($desiredMenu->location == 2) checked @endif> Footer</label>
                                         </div>
                                         <div class="d-flex gap-3 my-2">
                                             <div class="text-right">

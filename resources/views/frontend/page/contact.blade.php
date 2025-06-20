@@ -28,9 +28,7 @@
                         <div class="content-box">
                             <div class="sec-title">
                                 <h6>Quick Contact</h6>
-                                <h2>Have Questions? <br />Don't Hesitate to Contact Us</h2>
-                                <p>Please feel free to get in touch with us using the contact form below. We'd love to hear
-                                    for you welcomed and every pain avoided.</p>
+                                {!! $content->description !!}
                             </div>
                             <div class="inner-box">
                                 <div class="row clearfix">
@@ -40,8 +38,7 @@
                                                     src="{{ asset('frontend') }}/images/icons/icon-56.png" alt="">
                                             </div>
                                             <h4>Location</h4>
-                                            <p>141, First Floor, 12 St Roots Terrace, Los Angeles 90010 Unitd States of
-                                                America.</p>
+                                            <p>{{ get_field('site_location') }}</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
@@ -53,11 +50,17 @@
                                             <ul class="info clearfix">
                                                 <li>
                                                     <h6>Phone:</h6>
-                                                    <p><a href="tel:18963648018">+1 89-636-48018</a></p>
+                                                    <p>
+                                                        <a
+                                                            href="tel:{{ get_field('site_phone') }}">{{ get_field('site_phone') }}</a>
+                                                    </p>
                                                 </li>
                                                 <li>
                                                     <h6>Email:</h6>
-                                                    <p><a href="mailto:support@example.com">support@example.com</a></p>
+                                                    <p>
+                                                        <a
+                                                            href="mailto:{{ get_field('site_email') }}">{{ get_field('site_email') }}</a>
+                                                    </p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -68,16 +71,9 @@
                                                     src="{{ asset('frontend') }}/images/icons/icon-58.png" alt="">
                                             </div>
                                             <h4>Opening Hrs</h4>
-                                            <ul class="info clearfix">
-                                                <li>
-                                                    <h6>Mon - Friday:</h6>
-                                                    <p>09.00 am to 07.00 pm</p>
-                                                </li>
-                                                <li>
-                                                    <h6>Satday:</h6>
-                                                    <p>10.00 am to 05.00 pm</p>
-                                                </li>
-                                            </ul>
+                                            <div class="info clearfix">
+                                                {!! get_field('site_copyright') !!}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -107,6 +103,9 @@
                                             <input type="text" name="phone" required="" placeholder="Phone Number">
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                            <input type="text" name="subject" required="" placeholder="Subject">
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                             <textarea name="message" placeholder="Your Message..."></textarea>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
@@ -121,5 +120,8 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section>
+        <iframe src="{{ get_field('site_location_url') }}" frameborder="0" style="width: 100%; height: 600px;"></iframe>
     </section>
 @endsection

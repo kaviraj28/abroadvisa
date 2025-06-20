@@ -21,20 +21,23 @@
         'parentlink' => '',
     ])
 
-    @if ($teams->isNotEmpty())
-        <section class="team-section team-page centred">
+    @if ($countries->isNotEmpty())
+        <section class="countries-style-three countries-page">
+            <div class="pattern-layer"
+                style="background-image: url({{ asset('frontend/assets/images/shape/shape-18.png') }});"></div>
             <div class="auto-container">
                 <div class="row clearfix">
-                    @foreach ($teams as $team)
-                        <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                            <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    @foreach ($countries as $key => $data)
+                        <div class="col-lg-3 col-md-6 col-sm-12 countries-block">
+                            <div class="countries-block-three">
                                 <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image">{!! get_image($team->image, '', 'team') !!}</figure>
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4>{{ $team->name ?? '' }}</h4>
-                                        <span class="designation">{{ $team->position ?? '' }}</span>
+                                    <figure class="flag">
+                                        {!! get_image($data->image) !!}
+                                    </figure>
+                                    <h4><a href="{{ route('countrysingle', $data->slug) }}">{{ $data->name ?? '' }}</a></h4>
+                                    <p>{{ stripLetters($data->description, 90, '...') }}</p>
+                                    <div class="link">
+                                        <a href="{{ route('countrysingle', $data->slug) }}">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -44,4 +47,5 @@
             </div>
         </section>
     @endif
+
 @endsection

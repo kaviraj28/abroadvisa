@@ -32,13 +32,23 @@
 </head>
 
 <body>
-    <div class="boxed_wrapper home-2">
+    <div class="boxed_wrapper{{ Request::segment(1) != '' ? '' : 'home-2' }}">
         @include('layouts.frontend.header')
         <main>
             @yield('content')
         </main>
         @include('layouts.frontend.footer')
     </div>
+    <div class="gtranslate_wrapper"></div>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "languages": ["en", "ne", "hi"],
+            "wrapper_selector": ".gtranslate_wrapper",
+            "flag_style": "3d"
+        }
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <script src="{{ asset('frontend/js/jquery.js') }}"></script>
     <script src="{{ asset('frontend') }}/js/jquery.js"></script>
     <script src="{{ asset('frontend') }}/js/popper.min.js"></script>

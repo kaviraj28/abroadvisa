@@ -39,58 +39,23 @@
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                    <div class="image-box">
-                        <div class="text">
-                            <h2>14</h2>
-                            <h6>Years of <br />Experienced</h6>
-                        </div>
-                        <div class="curve-text">
-                            <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-23.png"
-                                    alt=""></div>
-                            <span class="curved-circle-2 rotate-me">Immigo Imigration Agency Esytablished 2007.</span>
-                        </div>
-                        <figure class="image image-1"><img src="{{ asset('frontend') }}/images/resource/about-4.jpg"
-                                alt="">
-                        </figure>
-                        <figure class="image image-2"><img src="{{ asset('frontend') }}/images/resource/about-5.jpg"
-                                alt="">
-                        </figure>
-                        <figure class="image image-3"><img src="{{ asset('frontend') }}/images/resource/about-6.jpg"
-                                alt="">
-                        </figure>
-                    </div>
+                    {!! get_image(get_field('homepage_image')) !!}
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div class="content-box">
                         <div class="sec-title">
-                            <h6>About Immigo</h6>
-                            <h2>Leading Immigration Consulting Firm Based In United States.</h2>
+                            <h6>About Prime European Experts</h6>
+                            <h2>{{ get_field('homepage_title') }}</h2>
                         </div>
                         <div class="text">
-                            <p>Denouncing pleasure and praising pain was born and will give you a complete ings of the great
-                                explorer of the truth the master-builder.</p>
-                        </div>
-                        <div class="inner-box">
-                            <div class="single-item">
-                                <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-24.png"
-                                        alt=""></div>
-                                <h4>Trusted by Clients</h4>
-                                <p>Give you a completed account the expound the teachings saying through shrinking from toil
-                                    and pain.</p>
-                            </div>
-                            <div class="single-item">
-                                <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-25.png"
-                                        alt=""></div>
-                                <h4>24/7 Support</h4>
-                                <p>Expound actual teachings too the great explorers truth our being able to do what we like
-                                    best.</p>
-                            </div>
+                            {!! get_field('homepage_description') !!}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     @if ($services->isNotEmpty())
         <section class="coaching-style-two">
             <div class="bg-layer parallax-bg" data-parallax='{"y": 100}'
@@ -118,12 +83,9 @@
                                     </div>
                                     <div class="overlay-text">
                                         <h4>
-                                            <a
-                                                href="{{ route('servicesingle', $data->slug) }}">{{ $data->name ?? '' }}</a>
+                                            <a href="{{ route('servicesingle', $data->slug) }}">{{ $data->name ?? '' }}</a>
                                         </h4>
-                                        @if ($data->short_description)
-                                            <p>{{ $data->short_description ?? '' }}</p>
-                                        @endif
+                                        <p>{{ stripLetters($data->description, 90, '...') }}</p>
                                         <div class="link"><a href="{{ route('servicesingle', $data->slug) }}"><i
                                                     class="flaticon-diagonal-arrow-1"></i></a>
                                         </div>
@@ -137,183 +99,59 @@
         </section>
     @endif
 
-    <section class="countries-style-three">
-        <div class="pattern-layer" style="background-image: url({{ asset('frontend') }}/images/shape/shape-16.png);">
-        </div>
-        <div class="auto-container">
-            <div class="sec-title">
-                <h6>Countries We Offer</h6>
-                <h2>Services for Following Countries</h2>
+    @if ($countries->isNotEmpty())
+        <section class="countries-style-three">
+            <div class="pattern-layer" style="background-image: url({{ asset('frontend') }}/images/shape/shape-16.png);">
             </div>
-            <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
-                <div class="countries-block-three">
-                    <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-9.png" alt="">
-                        </figure>
-                        <h6>Immigrate to</h6>
-                        <h4><a href="countries-details.html">United States</a></h4>
-                        <p>Known for the quality universities & friendly country.</p>
-                        <ul class="list clearfix">
-                            <li><i class="flaticon-diagonal-arrow"></i>Visitor Visa</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Student Visa & Admission</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Work Visa – H1B</li>
-                        </ul>
-                    </div>
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h6>Countries We Offer</h6>
+                    <h2>Services for Following Countries</h2>
                 </div>
-                <div class="countries-block-three">
-                    <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-10.png" alt="">
-                        </figure>
-                        <h6>Immigrate to</h6>
-                        <h4><a href="/">United Arab Emirates</a></h4>
-                        <p>Desire that they can foresee trouble bound ensue.</p>
-                        <ul class="list clearfix">
-                            <li><i class="flaticon-diagonal-arrow"></i>Visitor Visa</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Student Visa & Admission</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Work Visa – FSTP</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="countries-block-three">
-                    <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-11.png" alt="">
-                        </figure>
-                        <h6>Immigrate to</h6>
-                        <h4><a href="countries-details-5.html">United Kingdom</a></h4>
-                        <p>Known for the quality universities & friendly country.</p>
-                        <ul class="list clearfix">
-                            <li><i class="flaticon-diagonal-arrow"></i>Visitor Visa</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Student Visa & Admission</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="countries-block-three">
-                    <div class="inner-box">
-                        <figure class="flag"><img src="{{ asset('frontend') }}/images/icons/flag-12.png"
-                                alt=""></figure>
-                        <h6>Immigrate to</h6>
-                        <h4><a href="countries-details-6.html">South Africa</a></h4>
-                        <p>Desire that they can foresee trouble bound ensue.</p>
-                        <ul class="list clearfix">
-                            <li><i class="flaticon-diagonal-arrow"></i>Visitor Visa</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Student Visa & Admission</li>
-                            <li><i class="flaticon-diagonal-arrow"></i>Golden Visa</li>
-                        </ul>
-                    </div>
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
+                    @foreach ($countries as $key => $data)
+                        <div class="countries-block-three">
+                            <div class="inner-box">
+                                <figure class="flag">
+                                    {!! get_image($data->image) !!}
+                                </figure>
+                                <h4><a href="{{ route('countrysingle', $data->slug) }}">{{ $data->name ?? '' }}</a></h4>
+                                <p>{{ stripLetters($data->description, 90, '...') }}</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
-    <section class="chooseus-style-three centred">
-        <div class="auto-container">
-            <div class="sec-title light centred">
-                <h6>Why Choose Us</h6>
-                <h2>We Guarantee to Offer the Tailor <br />Made Services</h2>
-            </div>
-            <div class="three-item-carousel owl-carousel owl-theme">
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-26.png"
-                                alt=""></div>
-                        <h4>Direct Interviews</h4>
-                        <p>Other hand denounce with righteous indignation dislike men who are so beguiled demoralized the
-                            charms.</p>
-                    </div>
+    @if ($progress->isNotEmpty())
+        <section class="chooseus-style-three centred">
+            <div class="auto-container">
+                <div class="sec-title light centred">
+                    <h6>Why Choose Us</h6>
+                    <h2>We Guarantee to Offer the Tailor <br />Made Services</h2>
                 </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-27.png"
-                                alt=""></div>
-                        <h4>Faster Procesing</h4>
-                        <p>Blinded by desire that they cannot foresee the pain and trouble that are bound to and equal blame
-                            belongs.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-28.png"
-                                alt=""></div>
-                        <h4>Cost Effective</h4>
-                        <p>Our power of choice is untrammelled and when nothing prevents our being able to do what we like
-                            best.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-26.png"
-                                alt=""></div>
-                        <h4>Direct Interviews</h4>
-                        <p>Other hand denounce with righteous indignation dislike men who are so beguiled demoralized the
-                            charms.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-27.png"
-                                alt=""></div>
-                        <h4>Faster Procesing</h4>
-                        <p>Blinded by desire that they cannot foresee the pain and trouble that are bound to and equal blame
-                            belongs.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-28.png"
-                                alt=""></div>
-                        <h4>Cost Effective</h4>
-                        <p>Our power of choice is untrammelled and when nothing prevents our being able to do what we like
-                            best.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-26.png"
-                                alt=""></div>
-                        <h4>Direct Interviews</h4>
-                        <p>Other hand denounce with righteous indignation dislike men who are so beguiled demoralized the
-                            charms.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-27.png"
-                                alt=""></div>
-                        <h4>Faster Procesing</h4>
-                        <p>Blinded by desire that they cannot foresee the pain and trouble that are bound to and equal blame
-                            belongs.</p>
-                    </div>
-                </div>
-                <div class="chooseus-block-two">
-                    <div class="inner-box">
-                        <div class="shape"
-                            style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);"></div>
-                        <div class="icon-box"><img src="{{ asset('frontend') }}/images/icons/icon-28.png"
-                                alt=""></div>
-                        <h4>Cost Effective</h4>
-                        <p>Our power of choice is untrammelled and when nothing prevents our being able to do what we like
-                            best.</p>
-                    </div>
+                <div class="three-item-carousel owl-carousel owl-theme">
+                    @foreach ($progress as $key => $data)
+                        <div class="chooseus-block-two">
+                            <div class="inner-box">
+                                <div class="shape"
+                                    style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);">
+                                </div>
+                                <div class="icon-box">
+                                    {!! get_image($data->image) !!}
+                                </div>
+                                <h4>{{ $data->name ?? '' }}</h4>
+                                {!! $data->description ?? '' !!}
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
     @if ($reviews->isNotEmpty())
         <section class="testimonial-style-three">
             <div class="auto-container">
@@ -364,8 +202,7 @@
                                     {!! get_image($data->icon) !!}
                                 </div>
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="1500"
-                                        data-stop="{{ $data->count_num }}">0</span>
+                                    <span class="count-text" data-speed="1500" data-stop="{{ $data->count_num }}">0</span>
                                     @if ($data->num_postfix)
                                         <span>{{ $data->num_postfix ?? '' }}</span>
                                     @endif
@@ -378,6 +215,7 @@
             </div>
         </section>
     @endif
+
     <section class="faq-section" style="background-image: url({{ asset('frontend') }}/images/background/faq-bg.jpg);">
         <div class="auto-container">
             <div class="row clearfix">
@@ -419,6 +257,9 @@
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <input type="text" name="pnone" placeholder="Phone Number" required>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <input type="text" name="subject" placeholder="Subject" required>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                         <textarea name="message" placeholder="Your Message..."></textarea>
