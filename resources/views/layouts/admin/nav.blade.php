@@ -27,10 +27,8 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" data-bs-toggle="dropdown" href="javascript:void(0);">
                     <div class="avatar avatar-online">
-                        @if ($setting['site_main_logo'])
-                            <img class="w-px-40 h-auto rounded-circle"
-                                src="{{ $setting['site_main_logo'] ? asset(get_media($setting['site_main_logo'])->fullurl) : '' }}"
-                                alt="{{ $setting['site_main_logo'] ? get_media($setting['site_main_logo'])->alt : 'Visa Abroad' }}">
+                        @if (get_field('site_main_logo'))
+                            {!! get_image(get_field('site_main_logo')) !!}
                         @endif
                     </div>
                 </a>
@@ -40,10 +38,8 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        @if ($setting['site_main_logo'])
-                                            <img class="w-px-40 h-auto rounded-circle"
-                                                src="{{ $setting['site_main_logo'] ? asset(get_media($setting['site_main_logo'])->fullurl) : '' }}"
-                                                alt="{{ $setting['site_main_logo'] ? get_media($setting['site_main_logo'])->alt : 'Visa Abroad' }}">
+                                        @if (get_field('site_main_logo'))
+                                            {!! get_image(get_field('site_main_logo')) !!}
                                         @endif
                                     </div>
                                 </div>

@@ -124,14 +124,7 @@ if (!function_exists('stripLetters')) {
 if (!function_exists('image_sizes')) {
     function image_sizes()
     {
-        $size = [
-            'srvproject' => ['width' => 570, 'height' => 420],
-            'banner' => ['width' => 550, 'height' => 490],
-            'project' => ['width' => 478, 'height' => 576],
-            'blog' => ['width' => 279, 'height' => 174],
-            'review' => ['width' => 160, 'height' => 160],
-            'process' => ['width' => 75, 'height' => 75],
-        ];
+        $size = [];
         return  $size;
     }
 }

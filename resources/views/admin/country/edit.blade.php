@@ -96,6 +96,19 @@
                                         Publish</option>
                                 </select>
                             </div>
+
+                            <hr class="shadow-sm">
+
+                            <div class="form-group mb-3 d-flex align-items-center">
+                                <label for="order">Order</label>
+                                <input class="form-control ms-5 @error('order') is-invalid @enderror" type="number"
+                                    name="order" value="{{ old('order', $country->order) }}" placeholder="Enter Order">
+                                @error('order')
+                                    <div class="invalid-feedback" style="display: block;">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                             <hr class="shadow-sm">
 
                             <div class="form-group mb-3 mt-2">
@@ -171,6 +184,50 @@
                                     <input class="" id="feature_id" type="hidden" name="image"
                                         value="{{ old('image', $country->image) }}">
                                     @error('image')
+                                        <div class="invalid-feedback" style="display: block;">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <hr class="shadow-sm">
+
+                            <div class="form-group mb-3 mt-2">
+                                <label for="image">Icon</label>
+                                <div class="custom-file">
+                                    <a class="video-modal" data-bs-toggle="modal" data-bs-target="#videoModel"
+                                        href="javascript:void(0)">
+                                        <div
+                                            class="upload-media border border-2 d-flex justify-content-center align-items-center mb-3">
+                                            <div
+                                                class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
+                                                @if ($country->icon)
+                                                    @php
+                                                        $icon = get_media($country->icon ?? '');
+                                                    @endphp
+                                                    @if ($icon)
+                                                        <img id="video_img" src="{{ asset($icon->fullurl) }}"
+                                                            alt="{{ $icon->alt }}">
+                                                    @else
+                                                        <img id="video_img"
+                                                            src="{{ asset('admin/assets/images/upload.png') }}"
+                                                            alt="upload-image">
+                                                    @endif
+                                                @else
+                                                    <img class="custom-width" id="video_img"
+                                                        src="{{ asset('admin/assets/images/upload.png') }}"
+                                                        alt="upload-image">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger d-none" id="video_remove"
+                                        href="javascript:void(0)"><i class="fa fa-trash"></i> Delete</a>
+
+                                    <input class="" id="video_id" type="hidden" name="icon"
+                                        value="{{ old('icon', $country->icon) }}">
+                                    @error('icon')
                                         <div class="invalid-feedback" style="display: block;">
                                             {{ $message }}
                                         </div>

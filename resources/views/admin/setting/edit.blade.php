@@ -240,6 +240,14 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-3">
+                                                        <label for="video_url">Enter Video URL</label>
+                                                        <input class="form-control br-8" type="text" name="video_url"
+                                                            value="{{ get_field('video_url') }}"
+                                                            placeholder="Enter Video URL">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group mb-3">
                                                         <label for="homepage_title">Enter Homepage Title</label>
                                                         <input class="form-control br-8" type="text"
                                                             name="homepage_title"

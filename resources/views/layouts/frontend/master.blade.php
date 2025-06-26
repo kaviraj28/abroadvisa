@@ -25,7 +25,7 @@
     <link href="{{ asset('frontend') }}/css/bootstrap.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/jquery.fancybox.min.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/animate.css" rel="stylesheet">
-    <link href="{{ asset('frontend') }}/css/nice-select.css" rel="stylesheet">
+    {{-- <link href="{{ asset('frontend') }}/css/nice-select.css" rel="stylesheet"> --}}
     <link href="{{ asset('frontend') }}/css/color.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/style.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/responsive.css" rel="stylesheet">
@@ -59,7 +59,7 @@
     <script src="{{ asset('frontend') }}/js/jquery.fancybox.js"></script>
     <script src="{{ asset('frontend') }}/js/appear.js"></script>
     <script src="{{ asset('frontend') }}/js/scrollbar.js"></script>
-    <script src="{{ asset('frontend') }}/js/jquery.nice-select.min.js"></script>
+    {{-- <script src="{{ asset('frontend') }}/js/jquery.nice-select.min.js"></script> --}}
     <script src="{{ asset('frontend') }}/js/parallax-scroll.js"></script>
     <script src="{{ asset('frontend') }}/js/jquery.lettering.min.js"></script>
     <script src="{{ asset('frontend') }}/js/jquery.circleType.js"></script>

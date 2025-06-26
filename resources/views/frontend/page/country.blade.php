@@ -32,7 +32,7 @@
                             <div class="countries-block-three">
                                 <div class="inner-box">
                                     <figure class="flag">
-                                        {!! get_image($data->image) !!}
+                                        {!! get_image($data->icon) !!}
                                     </figure>
                                     <h4><a href="{{ route('countrysingle', $data->slug) }}">{{ $data->name ?? '' }}</a></h4>
                                     <p>{{ stripLetters($data->description, 90, '...') }}</p>

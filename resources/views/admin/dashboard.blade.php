@@ -27,7 +27,7 @@
         </div>
         <div class="col-lg-12 col-md-4 order-1">
             <div class="row">
-                <div class="col-md-4 col-6 mb-4">
+                <div class="col-md-2 col-3 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -35,14 +35,14 @@
                                     <i class="menu-icon dash-icon tf-icons bx bxs-contact"></i>
                                 </div>
                             </div>
-                            <span class="fw-semibold d-block mb-1">Contacts</span>
+                            <span class="fw-semibold d-block mb-1">Inquiries</span>
 
                             <h3 class="card-title mb-2">{{ $contacts->count() ?? 0 }}</h3>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-6 mb-4">
+                <div class="col-md-2 col-3 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-6 mb-4">
+                <div class="col-md-2 col-3 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-6 mb-4">
+                <div class="col-md-2 col-3 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-6 mb-4">
+                <div class="col-md-2 col-3 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-6 mb-4">
+                <div class="col-md-2 col-3 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
@@ -109,9 +109,9 @@
                                     <i class="menu-icon dash-icon tf-icons bx bx-group"></i>
                                 </div>
                             </div>
-                            <span class="fw-semibold d-block mb-1">Partners</span>
+                            <span class="fw-semibold d-block mb-1">Country</span>
 
-                            <h3 class="card-title mb-2">{{ $partners->count() ?? 0 }}</h3>
+                            <h3 class="card-title mb-2">{{ $country->count() ?? 0 }}</h3>
 
                         </div>
                     </div>

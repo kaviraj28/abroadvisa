@@ -28,9 +28,16 @@ class FrontendController extends Controller
         $progress = Progress::where('status', 1)->oldest('order')->get();
         $popups = Popup::where('status', 1)->oldest('order')->get();
         $countries = Country::where('status', 1)->oldest('order')->limit(8)->get();
+        $faqs = Faq::where('status', 1)->oldest('order')->limit(5)->get();
 
-        return view('frontend.home.index', compact(['blogs', 'counters', 'progress', 'popups', 'reviews', 'services', 'countries']));
+        return view('frontend.home.index', compact(['blogs', 'counters', 'progress', 'popups', 'reviews', 'services', 'countries', 'faqs']));
     }
+
+    public function appoint()
+    {
+        return view('frontend.page.appointment');
+    }
+
 
     public function error()
     {

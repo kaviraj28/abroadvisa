@@ -21,22 +21,23 @@
         'parentlink' => '',
     ])
     @if ($faqs->isNotEmpty())
-        <div class="faq-area pt-100 pb-70">
-            <div class="container">
-                <div class="row pt-45">
-                    <div class="col-lg-12">
-                        <div class="faq-content">
-                            <div class="faq-accordion">
-                                <ul class="accordion">
+        <section class="faq-page-section">
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="row clearfix">
+                        <div class="col-md-12 col-sm-12 content-column">
+                            <div class="faq-content">
+                                <ul class="accordion-box">
                                     @foreach ($faqs as $key => $fq)
-                                        <li class="accordion-item">
-                                            <a class="accordion-title{{ $key == 0 ? ' active' : '' }}"
-                                                href="javascript:void(0)">
-                                                <i class="bx bx-plus"></i>
-                                                {{ $fq->question ?? '' }}
-                                            </a>
-                                            <div class="accordion-content{{ $key == 0 ? ' show' : '' }}">
-                                                {!! $fq->answer ?? '' !!}
+                                        <li class="accordion block{{ $key == 0 ? ' active-block' : '' }}">
+                                            <div class="acc-btn{{ $key == 0 ? ' active' : '' }}">
+                                                <div class="icon-outer"><i class="flaticon-diagonal-arrow"></i></div>
+                                                <h5><span>Q{{ $key + 1 }}.</span>{{ $fq->question ?? '' }}</h5>
+                                            </div>
+                                            <div class="acc-content{{ $key == 0 ? ' current' : '' }}">
+                                                <div class="text">
+                                                    {!! $fq->answer ?? '' !!}
+                                                </div>
                                             </div>
                                         </li>
                                     @endforeach
@@ -46,6 +47,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     @endif
 @endsection

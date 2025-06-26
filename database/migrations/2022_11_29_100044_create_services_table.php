@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('banner')->nullable();
             $table->longText('description')->nullable();
-            $table->longText('short_description')->nullable();
             $table->string('seo_title')->nullable();
             $table->longText('seo_description')->nullable();
             $table->longText('seo_schema')->nullable();

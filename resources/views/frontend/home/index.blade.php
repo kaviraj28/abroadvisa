@@ -18,9 +18,8 @@
         <div class="image-layer">
             <div class="position-relative overflow-hidden">
                 <div class="slider-video-box">
-                    <iframe
-                        src="https://www.youtube.com/embed/cIGQxDDnPZI?mode=opaque&autoplay=1&mute=1&loop=1&playlist=cIGQxDDnPZI&controls=1&modestbranding=1&rel=0&autohide=1"
-                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="{{ get_field('video_url') }}" frameborder="0" allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>
                     <div class="video-content">
                         <div class="container d-none d-md-block">
 
@@ -113,7 +112,7 @@
                         <div class="countries-block-three">
                             <div class="inner-box">
                                 <figure class="flag">
-                                    {!! get_image($data->image) !!}
+                                    {!! get_image($data->icon) !!}
                                 </figure>
                                 <h4><a href="{{ route('countrysingle', $data->slug) }}">{{ $data->name ?? '' }}</a></h4>
                                 <p>{{ stripLetters($data->description, 90, '...') }}</p>
@@ -140,7 +139,7 @@
                                     style="background-image: url({{ asset('frontend') }}/images/shape/shape-17.png);">
                                 </div>
                                 <div class="icon-box">
-                                    {!! get_image($data->image) !!}
+                                    {!! get_image($data->icon) !!}
                                 </div>
                                 <h4>{{ $data->name ?? '' }}</h4>
                                 {!! $data->description ?? '' !!}
@@ -228,13 +227,15 @@
                                 did’t
                                 get the answers ask to our experts.</p>
                         </div>
-                        <ul class="questions-list clearfix">
-                            <li><a href="/"><span>Q1.</span>Which country is better for immigration?</a></li>
-                            <li><a href="/"><span>Q2.</span>How can I get a student visa?</a></li>
-                            <li><a href="/"><span>Q3.</span>How much does immigration cost?</a></li>
-                            <li><a href="/"><span>Q4.</span>How do I contact Immigo Consultant?</a></li>
-                        </ul>
-                        <div class="link"><a href="/">View More Faq’s <i class="flaticon-next"></i></a></div>
+                        @if ($faqs->isNotEmpty())
+                            <ul class="questions-list clearfix">
+                                @foreach ($faqs as $key => $data)
+                                    <li><a href="/"><span>Q{{ $key + 1 }}.</span>{{ $key->name ?? '' }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <div class="link"><a href="/">View More Faq’s <i class="flaticon-next"></i></a></div>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 contact-column">

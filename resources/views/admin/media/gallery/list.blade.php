@@ -7,7 +7,7 @@
              <li class="col px-0 mb-1 medias image_card{{ $files->id }}" data-id="{{ $files->id }}"
                  data-url="{{ asset($files->fullurl) }}" data-alt="alt-{{ $files->alt }}">
                  <div class="thumbnails media-wrapper" data-id="{{ $files->id }}">
-                     @if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC']))
+                     @if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC', 'svg']))
                          <img src="{{ asset($files->fullurl) }}" alt="{{ $files->alt }}">
                      @else
                          <img src="{{ asset('admin/assets/images/file-exts.png') }}" alt="{{ $files->alt }}">

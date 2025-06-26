@@ -13,7 +13,7 @@
                 </div>
                 <div class="top-right pull-right">
                     @if ($socialdata->isNotEmpty())
-                        <ul class="social-link clearfix">
+                        <ul class="social-links clearfix">
                             <li>
                                 <h6>Follow On: </h6>
                             </li>
@@ -38,7 +38,7 @@
                     <div class="logo-box">
                         <div class="bg-layer"></div>
                         <figure class="logo"><a href="/">
-                                {!! get_image(get_field('site_main_logo')) !!}
+                                {!! get_image(get_field('site_main_logo'), 'logo-img') !!}
                             </a></figure>
                     </div>
                     <div class="menu-area clearfix">
@@ -71,8 +71,7 @@
                     <div class="logo-box">
                         <div class="bg-layer"></div>
                         <figure class="logo"><a href="/">
-                                <img src="{{ $setting['site_main_logo'] ? asset(get_media($setting['site_main_logo'])->fullurl) : '' }}"
-                                    alt="{{ $setting['site_main_logo'] ? get_media($setting['site_main_logo'])->alt : 'Visa Services' }}">
+                                {!! get_image(get_field('site_main_logo'), 'logo-img') !!}
                             </a></figure>
                     </div>
                     <div class="menu-area">
@@ -97,7 +96,7 @@
 
     <nav class="menu-box">
         <div class="nav-logo"><a href="/">
-                {!! get_image(get_field('site_main_logo')) !!}
+                {!! get_image(get_field('site_main_logo'), 'logo-img') !!}
             </a></div>
         <div class="menu-outer"></div>
         <div class="contact-info">

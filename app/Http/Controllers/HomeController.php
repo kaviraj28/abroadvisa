@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contacts;
+use App\Models\Country;
 use App\Models\Faq;
 use App\Models\Member;
 use App\Models\News;
@@ -36,8 +37,8 @@ class HomeController extends Controller
         $reviews = Review::all();
         $services = Services::all();
         $teams = Member::all();
-        $partners = Partner::all();
+        $country = Country::all();
         $faqs = Faq::all();
-        return view('admin.dashboard', compact(['contacts', 'posts', 'pages', 'reviews', 'services', 'teams', 'partners', 'faqs']));
+        return view('admin.dashboard', compact(['contacts', 'posts', 'pages', 'reviews', 'services', 'teams', 'country', 'faqs']));
     }
 }

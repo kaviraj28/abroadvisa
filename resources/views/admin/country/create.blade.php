@@ -138,6 +138,30 @@
 
                             <hr class="shadow-sm">
 
+                            <div class="form-group mb-3 mt-2">
+                                <label for="image">Icon</label>
+                                <div class="custom-file">
+                                    <a class="video-modal" data-bs-toggle="modal" data-bs-target="#videoModel"
+                                        href="javascript:void(0)">
+                                        <div
+                                            class="upload-media border border-2 d-flex justify-content-center align-items-center mb-3">
+                                            <div
+                                                class="thumbnails media-wrapper d-flex justify-content-center align-items-center">
+                                                <img class="custom-width" id="video_img"
+                                                    src="{{ asset('admin/assets/images/upload.png') }}"
+                                                    alt="upload-image">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger d-none" id="video_remove"
+                                        href="javascript:void(0)"><i class="fa fa-trash"></i> Delete</a>
+                                    <input class="" id="video_id" type="hidden" name="icon"
+                                        value="{{ old('icon') }}">
+                                </div>
+                            </div>
+
+                            <hr class="shadow-sm">
+
                             <div class="card-footers">
                                 <button class="btn btn-sm btn-primary" type="submit"><i class="fa-solid fa-plus"></i>
                                     Publish</button>

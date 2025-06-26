@@ -60,10 +60,7 @@
                             <a class="app-brand-link gap-2" href="{{ route('login') }}">
                                 <span class="app-brand-logo demo">
                                 </span>
-
-                                <img src="{{ $setting['site_main_logo'] ? asset(get_media($setting['site_main_logo'])->fullurl) : '' }}"
-                                    alt="{{ $setting['site_main_logo'] ? get_media($setting['site_main_logo'])->alt : 'Visa Abroad' }}"
-                                    width="200">
+                                {!! get_image(get_field('site_main_logo')) !!}
                             </a>
                         </div>
                         <!-- /Logo -->

@@ -1,10 +1,10 @@
 <aside class="layout-menu menu-vertical menu bg-menu-theme" id="layout-menu">
     <div class="app-brand demo p-0">
         <a class="app-brand-link mx-auto my-0" href="{{ route('home') }}" target="_blank">
-            @if ($setting['site_main_logo'])
-                <img src="{{ $setting['site_main_logo'] ? asset(get_media($setting['site_main_logo'])->fullurl) : '' }}"
-                    alt="{{ $setting['site_main_logo'] ? get_media($setting['site_main_logo'])->alt : 'Visa Abroad' }}"
-                    height="50">
+            @if (get_field('site_main_logo'))
+                <div style="width: 150px;">
+                    {!! get_image(get_field('site_main_logo')) !!}
+                </div>
             @else
                 <span class="app-brand-text demo menu-text fw-bolder ms-2">Visa Abroad</span>
             @endif

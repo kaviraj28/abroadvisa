@@ -5,10 +5,10 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 footer-column">
                     <div class="footer-widget logo-widget">
                         <figure class="footer-logo"><a href="/">
-                                {!! get_image(get_field('site_footer_logo')) !!}
+                                {!! get_image(get_field('site_footer_logo'), 'logo-img') !!}
                             </a></figure>
                         <div class="text">
-                            {!! get_field('site_info') !!}
+                            <p>{{ get_field('site_information') }}</p>
                             <h6><a href="index-3.html">Free Consultation <i class="flaticon-next"></i></a></h6>
                         </div>
                         {!! get_the_menu(2, 'links-list clearfix') !!}

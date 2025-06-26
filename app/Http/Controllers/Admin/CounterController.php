@@ -90,7 +90,6 @@ class CounterController extends Controller
      */
     public function destroy(Counter $counter)
     {
-        $this->removeFile($counter->image);
         $counter->delete();
         return redirect()->route('counters.index')->with('message', 'Delete Successfully');
     }

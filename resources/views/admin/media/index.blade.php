@@ -2,20 +2,6 @@
 @section('title', 'Media Library - Ecommerce')
 
 @section('content')
-    <style>
-        .media-wrapper {
-            width: 100%;
-            height: 650px;
-            overflow: hidden;
-            background: #e7fff0;
-        }
-
-        .media-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: scale-down;
-        }
-    </style>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Upload Files</h5>
@@ -55,6 +41,7 @@
                                                 'JPEG',
                                                 'WEBP',
                                                 'HEIC',
+                                                'svg',
                                             ])
                                         ) {
                                             $height = $gallery->height ?? '';
@@ -67,13 +54,13 @@
                                             <a class="fro-dropzone-image-a"data-bs-toggle="modal"
                                                 data-bs-target="#mediaModel" data-id="{{ $gallery->id }}"
                                                 data-title="{{ $gallery->name }}"
-                                                data-url="{{ in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC']) ? $gallery->fullurl : '/admin/assets/images/file-exts.png' }}"
+                                                data-url="{{ in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC', 'svg']) ? $gallery->fullurl : '/admin/assets/images/file-exts.png' }}"
                                                 data-name="{{ $gallery->fullurl }}" data-alt="{{ $gallery->alt }}"
                                                 data-size="{{ $size }}"
                                                 data-date="{{ date('d F, Y', strtotime($gallery->created_at)) }}"
-                                                @if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC'])) data-height="{{ $height ?? '' }}" data-width="{{ $width ?? '' }}" @endif
+                                                @if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC', 'svg'])) data-height="{{ $height ?? '' }}" data-width="{{ $width ?? '' }}" @endif
                                                 href="{{ asset($gallery->url) }}">
-                                                @if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC']))
+                                                @if (in_array($exts, ['png', 'jpg', 'jpeg', 'webp', 'heic', 'PNG', 'JPG', 'JPEG', 'WEBP', 'HEIC', 'svg']))
                                                     <img class="fro-dropzone-image-img"
                                                         src="{{ asset($gallery->fullurl) }}" alt="{{ $gallery->alt }}">
                                                 @else

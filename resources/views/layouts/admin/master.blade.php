@@ -66,7 +66,7 @@
             width: 200px;
             height: 200px;
             overflow: hidden;
-            background: #e7fff0;
+            background: #f5f5f5;
         }
 
         .thumbnails.media-wrapper img {
@@ -124,6 +124,7 @@
             min-height: 200px;
             width: 100%;
             overflow: hidden;
+            background: #f5f5f5;
         }
 
         li.col.px-0.mb-1.medias,
@@ -327,51 +328,6 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                    @if (Request::segment(2) == 'technology' || Request::segment(2) == 'page')
-                        @if (Request::segment(3) == 'create' || Request::segment(4) == 'edit')
-                            <div class="modal fade" id="mapModel" tabindex="-1" aria-labelledby="mapModelLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h2 class="modal-title fs-5">Select File</h2>
-                                            <button class="btn-close" data-bs-dismiss="modal" type="button"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body" style="height: 80vh;overflow-y: auto;">
-                                            <div id="mapfiles">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-primary" id="map-image-close"
-                                                data-bs-dismiss="modal" type="button">Select</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal fade" id="galleryModel" tabindex="-1"
-                                aria-labelledby="galleryModelLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h2 class="modal-title fs-5">Select File</h2>
-                                            <button class="btn-close" data-bs-dismiss="modal" type="button"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body" style="height: 80vh;overflow-y: auto;">
-                                            <div id="galleryfiles">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <div class="d-none" id="gallery-image-value" data-value=""></div>
-                                            <button class="btn btn-primary" id="gallery-image-close"
-                                                data-bs-dismiss="modal" type="button">Select</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
                     @endif
                     <div class="content-backdrop fade"></div>
                 </div>

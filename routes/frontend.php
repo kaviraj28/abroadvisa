@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 
+Route::get('/appoint', [FrontendController::class, 'appoint'])->name('appoint');
 Route::get('/404', [FrontendController::class, 'error'])->name('error');
 Route::get('/{slug}', [FrontendController::class, 'pagesingle'])->name('pagesingle');
 
