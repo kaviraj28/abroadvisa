@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\ApplicationController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\MenuController;
@@ -15,22 +14,12 @@ use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\SocialController;
-use App\Http\Controllers\Admin\CareersController;
 use App\Http\Controllers\Admin\CounterController;
-use App\Http\Controllers\Admin\PartnerController;
-use App\Http\Controllers\Admin\PricingController;
-use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Admin\RoadmapController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ContactsController;
-use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\ProgressController;
 use App\Http\Controllers\Admin\ServicesController;
-use App\Http\Controllers\Admin\TechnologyController;
-use App\Http\Controllers\Admin\BlogcategoryController;
-use App\Http\Controllers\Admin\RecruitmentsController;
 use App\Http\Controllers\Admin\UserRegisterController;
-use App\Http\Controllers\Admin\ClientRegistrationController;
 use App\Http\Controllers\Admin\CountryController;
 
 /*
@@ -89,7 +78,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
      */
 
     Route::resource('contacts', ContactsController::class);
-
+    Route::resource('application', ApplicationController::class);
 
     /*
     |--------------------------------------------------------------------------

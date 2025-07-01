@@ -37,7 +37,7 @@
                 <div data-i18n="Accordion">Menu</div>
             </a>
         </li>
-        <li class="menu-item @if (Request::segment(2) == 'contacts' || Request::segment(2) == 'clientRegistration') {{ 'active open' }} @endif">
+        <li class="menu-item @if (Request::segment(2) == 'contacts' || Request::segment(2) == 'application') {{ 'active open' }} @endif">
             <a class="menu-link menu-toggle" href="javascript:void(0)">
                 <i class="menu-icon tf-icons bx bx-notepad"></i>
                 <div data-i18n="General Setting">Form</div>
@@ -48,6 +48,13 @@
                         href="{{ route('contacts.index') }}">
                         <i class="menu-icon tf-icons bx bxs-contact"></i>
                         <div data-i18n="Accordion">Inquiries</div>
+                    </a>
+                </li>
+                <li class="menu-item @if (Request::segment(2) == 'application') {{ 'active open' }} @endif">
+                    <a class="menu-link {{ Request::segment(2) == 'application' ? 'active' : '' }}"
+                        href="{{ route('application.index') }}">
+                        <i class="menu-icon tf-icons bx bxs-contact"></i>
+                        <div data-i18n="Accordion">Applications</div>
                     </a>
                 </li>
             </ul>

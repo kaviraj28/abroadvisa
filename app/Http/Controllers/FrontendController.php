@@ -201,7 +201,7 @@ class FrontendController extends Controller
             // Passport Details
             'passport_no' => 'required|string|max:255',
             'passport_issue_date' => 'required|date',
-            'passport_expire_date' => 'required|date|after:passport_issue_date', // Added 'after' rule
+            'passport_expire_date' => 'required|date', // Added 'after' rule
             'passport_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
 
             // Police Report
@@ -222,7 +222,7 @@ class FrontendController extends Controller
             'license_no' => 'nullable|string|max:255',
             'license_category' => 'nullable|string|max:255',
             'license_issue_date' => 'nullable|date',
-            'license_expire_date' => 'nullable|date|after:license_issue_date', // Added 'after' rule
+            'license_expire_date' => 'nullable|date', // Added 'after' rule
             'license_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
 
             // Work Experience (Nepal)

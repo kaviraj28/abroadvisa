@@ -1,5 +1,18 @@
 @extends('layouts.frontend.master')
 
+@section('seo')
+    @include('frontend.global.seo', [
+        'name' => 'Application Form',
+        'title' => 'Application Form',
+        'description' => '',
+        'keyword' => '',
+        'schema' => '',
+        'seoimage' => $setting['homepage_image'] ?? '',
+        'created_at' => '2025-06-10T08:09:15+00:00',
+        'updated_at' => '2025-06-10T10:54:15+00:00',
+    ])
+@endsection
+
 @section('content')
     <style>
         .form-header {
@@ -202,7 +215,7 @@
                     <h2>Application Form</h2>
                     <p>Please fill out the form carefully to proceed with your application.</p>
                 </div>
-
+                @include('frontend.includes.message')
                 <div class="step-indicator">
                     <div class="line"></div>
                     <div class="step active" data-step="1">
@@ -218,7 +231,6 @@
                         <span>Step 4</span>
                     </div>
                 </div>
-
                 {{-- Display validation errors --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -229,10 +241,8 @@
                         </ul>
                     </div>
                 @endif
-
                 <form id="multiStepForm" action="{{ route('applications') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
                     <!-- Step 1: Personal Information & Family Details -->
                     <div class="form-section active mt-3" id="step1">
                         <fieldset>
@@ -527,7 +537,6 @@
                             </div>
                         </fieldset>
                     </div>
-
                     <!-- Step 2: Address Details -->
                     <div class="form-section mt-3" id="step2">
                         <fieldset>
@@ -599,10 +608,8 @@
                             </div>
                         </fieldset>
                     </div>
-
                     <!-- Step 3: Experience & Education -->
                     <div class="form-section mt-3" id="step3">
-
                         <fieldset>
                             <legend>Education Details</legend>
                             <div class="row g-3">
@@ -665,7 +672,6 @@
                                 </div>
                             </div>
                         </fieldset>
-
                         <fieldset>
                             <legend>Language Known</legend>
                             <div class="row g-3">
@@ -763,7 +769,6 @@
                                 </div>
                             </div>
                         </fieldset>
-
                         <fieldset>
                             <legend>Police Report</legend>
                             <div class="row g-3">
@@ -851,7 +856,6 @@
                             </div>
                         </fieldset>
                     </div>
-
                     <!-- Step 4: General Details -->
                     <div class="form-section mt-3" id="step4">
                         <fieldset>
@@ -1167,7 +1171,6 @@
                                 </div>
                         </fieldset>
                     </div>
-
                     <div class="form-navigation">
                         <button class="btn btn-secondary" id="prevBtn" type="button"
                             style="display: none;">Previous</button>
@@ -1193,9 +1196,6 @@
         const multiStepForm = document.getElementById('multiStepForm');
 
         // Safely embed PHP old() values into JavaScript
-        const oldState = JSON.parse('{{ json_encode(old('state')) }}');
-        const oldDistrict = JSON.parse('{{ json_encode(old('district')) }}');
-        const oldCity = JSON.parse('{{ json_encode(old('city')) }}');
         const oldMaritalStatus = JSON.parse('{{ json_encode(old('marital_status')) }}');
         const oldLangOther = JSON.parse('{{ json_encode(old('lang_other')) }}');
         const oldWorkedInNepal = JSON.parse('{{ json_encode(old('worked_in_nepal')) }}');
@@ -4882,23 +4882,6 @@
             showStep(currentStep);
         });
 
-        // The form submission is now handled by Laravel, so this JS part will be replaced by server-side handling
-        // multiStepForm.addEventListener('submit', (event) => {
-        //     event.preventDefault();
-        //     if (validateStep(totalSteps)) {
-        //         alert('Form submitted successfully!');
-        //         const formData = new FormData(multiStepForm);
-        //         const data = {};
-        //         for (let [key, value] of formData.entries()) {
-        //             data[key] = value;
-        //         }
-        //         console.log(data);
-        //     } else {
-        //         alert('Please fill in all required fields before submitting.');
-        //     }
-        // });
-
-
         // Dynamic fields visibility and logic
         const maritalStatus = document.getElementById('maritalStatus');
         const spouseNameField = document.getElementById('spouseNameField');
@@ -5111,9 +5094,7 @@
                 option.value = province.name; // Use name as value
                 option.textContent = province.name;
                 // Preserve old input if any for validation errors
-                if (oldState === province.name) {
-                    option.selected = true;
-                }
+
                 stateSelect.appendChild(option);
             });
             // Initially disable district and city dropdowns
@@ -5121,9 +5102,6 @@
             citySelect.disabled = true;
 
             // Trigger change event to populate districts if old state value exists
-            if (oldState) {
-                stateSelect.dispatchEvent(new Event('change'));
-            }
         }
 
         // Function to populate districts based on selected province
@@ -5143,18 +5121,11 @@
                     const option = document.createElement('option');
                     option.value = district.name;
                     option.textContent = district.name;
-                    // Preserve old input if any
-                    if (oldDistrict === district.name) {
-                        option.selected = true;
-                    }
                     districtSelect.appendChild(option);
                 });
                 districtSelect.disabled = false; // Enable district select
 
-                // Trigger change event to populate cities if old district value exists
-                if (oldDistrict) {
-                    districtSelect.dispatchEvent(new Event('change'));
-                }
+
             }
         });
 
@@ -5178,10 +5149,6 @@
                         const option = document.createElement('option');
                         option.value = municipality.name;
                         option.textContent = municipality.name;
-                        // Preserve old input if any
-                        if (oldCity === municipality.name) {
-                            option.selected = true;
-                        }
                         citySelect.appendChild(option);
                     });
                     citySelect.disabled = false; // Enable city select

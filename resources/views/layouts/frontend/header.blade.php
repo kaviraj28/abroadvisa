@@ -56,7 +56,8 @@
                     </div>
                     <div class="menu-right-content">
                         <div class="btn-box">
-                            <a class="theme-btn btn-one" href="/">Appointment<i class="flaticon-next"></i></a>
+                            <a class="theme-btn btn-one" href="/applications">Appointment<i
+                                    class="flaticon-next"></i></a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +82,8 @@
                     </div>
                     <div class="menu-right-content">
                         <div class="btn-box">
-                            <a class="theme-btn btn-one" href="/">Appointment<i class="flaticon-next"></i></a>
+                            <a class="theme-btn btn-one" href="/applications">Appointment<i
+                                    class="flaticon-next"></i></a>
                         </div>
                     </div>
                 </div>
