@@ -230,7 +230,7 @@
                         @if ($faqs->isNotEmpty())
                             <ul class="questions-list clearfix">
                                 @foreach ($faqs as $key => $data)
-                                    <li><a href="/"><span>Q{{ $key + 1 }}.</span>{{ $key->name ?? '' }}</a>
+                                    <li><a href="/"><span>Q{{ $key + 1 }}.</span>{{ $key->question ?? '' }}</a>
                                     </li>
                                 @endforeach
                             </ul>

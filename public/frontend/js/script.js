@@ -639,9 +639,9 @@
 
 
 	//nice select
-	$(document).ready(function() {
-      $('select:not(.ignore)').niceSelect();
-    });
+	// $(document).ready(function() {
+    //   $('select:not(.ignore)').niceSelect();
+    // });
 
 	if($('.curved-circle').length) {
         $('.curved-circle').circleType({position: 'absolute', dir: 1, radius: 74, forceHeight: true, forceWidth: true});

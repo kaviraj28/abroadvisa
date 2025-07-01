@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\ClientRegistrationController;
 use App\Http\Controllers\Admin\ContactsController;
-use App\Http\Controllers\Admin\RecruitmentsController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -18,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 
-Route::get('/appoint', [FrontendController::class, 'appoint'])->name('appoint');
+Route::get('/applications', [FrontendController::class, 'appoint'])->name('appoint');
 Route::get('/404', [FrontendController::class, 'error'])->name('error');
 Route::get('/{slug}', [FrontendController::class, 'pagesingle'])->name('pagesingle');
 
@@ -32,3 +30,4 @@ Route::get('/careers/{slug}', [FrontendController::class, 'careersingle'])->name
 
 
 Route::post('/inquiry', [ContactsController::class, 'inquiry'])->name('inquiry');
+Route::post('/applications', [FrontendController::class, 'applications'])->name('applications');

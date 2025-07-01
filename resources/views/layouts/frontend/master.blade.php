@@ -22,7 +22,7 @@
     <link href="{{ asset('frontend') }}/css/font-awesome-all.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/flaticon.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/owl.css" rel="stylesheet">
-    <link href="{{ asset('frontend') }}/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/jquery.fancybox.min.css" rel="stylesheet">
     <link href="{{ asset('frontend') }}/css/animate.css" rel="stylesheet">
     {{-- <link href="{{ asset('frontend') }}/css/nice-select.css" rel="stylesheet"> --}}
@@ -52,7 +52,7 @@
     <script src="{{ asset('frontend/js/jquery.js') }}"></script>
     <script src="{{ asset('frontend') }}/js/jquery.js"></script>
     <script src="{{ asset('frontend') }}/js/popper.min.js"></script>
-    <script src="{{ asset('frontend') }}/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('frontend') }}/js/owl.js"></script>
     <script src="{{ asset('frontend') }}/js/wow.js"></script>
     <script src="{{ asset('frontend') }}/js/validation.js"></script>

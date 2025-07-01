@@ -13,9 +13,11 @@ use App\Models\Careers;
 use App\Models\Counter;
 use App\Models\Country;
 use App\Models\Partner;
-use App\Models\Project;
 use App\Models\Progress;
 use App\Models\Services;
+use App\Models\Application;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FrontendController extends Controller
 {
@@ -156,6 +158,144 @@ class FrontendController extends Controller
             return view('frontend.country.show', compact(['content']));
         } else {
             return redirect()->route('error');
+        }
+    }
+
+    public function applications(Request $request)
+    {
+        // Define validation rules for all fields, including file uploads
+        $rules = [
+            // Personal Information
+            'first_name' => 'required|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'interested_country' => 'required|string|max:255',
+            'dob' => 'required|date',
+            'mobile_no' => 'required|string', // Updated regex
+            'whatsapp_no' => 'nullable|string', // Updated regex
+            'copy_mobile_no' => 'nullable|boolean', // Updated for checkbox
+            'gender' => 'required|string|max:50',
+            'marital_status' => 'required|string|max:50',
+            'spouse_name' => 'nullable|string|max:255',
+            'citizenship_no' => 'required|string|max:255',
+            'issue_district' => 'required|string|max:255',
+            'issue_date' => 'required|date',
+            'email_address' => 'required|string|email|max:255', // 'unique' rule removed for flexibility
+
+            // Address Details
+            'state' => 'required|string|max:255',
+            'district' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'ward_no' => 'required|integer|min:1',
+            'village_tole_chowk' => 'required|string|max:255',
+
+            // Family Details
+            'father_name' => 'required|string|max:255',
+            'father_contact' => 'nullable|string', // Updated regex
+            'mother_name' => 'required|string|max:255',
+            'mother_contact' => 'nullable|string', // Updated regex
+            'other_relative_name' => 'nullable|string|max:255',
+            'other_relative_contact' => 'nullable|string', // Updated regex
+            'relative_relation' => 'nullable|string|max:255',
+
+            // Passport Details
+            'passport_no' => 'required|string|max:255',
+            'passport_issue_date' => 'required|date',
+            'passport_expire_date' => 'required|date|after:passport_issue_date', // Added 'after' rule
+            'passport_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
+
+            // Police Report
+            'police_report_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
+
+            // Language Known
+            'lang_nepali' => 'nullable|boolean', // Changed from sometimes
+            'lang_english' => 'nullable|boolean', // Changed from sometimes
+            'lang_hindi' => 'nullable|boolean', // Changed from sometimes
+            'lang_other' => 'nullable|boolean', // Changed from sometimes
+            'other_language' => 'nullable|string|max:255',
+
+            // Education Details
+            'education_level' => 'required|string|max:255',
+            'edu_level_doc_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
+
+            // Driving License Details
+            'license_no' => 'nullable|string|max:255',
+            'license_category' => 'nullable|string|max:255',
+            'license_issue_date' => 'nullable|date',
+            'license_expire_date' => 'nullable|date|after:license_issue_date', // Added 'after' rule
+            'license_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
+
+            // Work Experience (Nepal)
+            'worked_in_nepal' => 'required|string|in:yes,no',
+            'nepal_company' => 'nullable|string|max:255',
+            'nepal_company_address' => 'nullable|string|max:255',
+            'nepal_post' => 'nullable|string|max:255',
+            'nepal_working_period' => 'nullable|string|max:255',
+            'nepal_work_cert_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
+
+            // Additional Details: Abroad Experience
+            'been_abroad' => 'required|string|in:yes,no',
+            'abroad_country' => 'nullable|string|max:255',
+            'abroad_company' => 'nullable|string|max:255',
+            'abroad_post' => 'nullable|string|max:255',
+            'abroad_working_period' => 'nullable|string|max:255',
+            'abroad_work_cert_upload' => 'nullable|file|mimes:jpeg,png,pdf,jpg|max:200', // Updated for file upload
+
+            // Additional Details: Previous Application
+            'applied_before' => 'required|string|in:yes,no',
+            'applied_country' => 'nullable|string|max:255',
+            'agent_manpower' => 'nullable|string|max:255',
+            'applied_when' => 'nullable|date',
+
+            // Where did you hear about this Prime European Company?
+            'hear_about_us' => 'required|string|max:255',
+            'other_source' => 'nullable|string|max:255',
+        ];
+
+        // Custom error messages for better user feedback
+        $messages = [
+            'required' => 'The :attribute field is required.',
+            'email' => 'The :attribute must be a valid email address.',
+            'mimes' => 'The :attribute must be a file of type: :values.',
+            'max' => 'The :attribute may not be greater than :max kilobytes.',
+            'after' => 'The :attribute must be a date after :date.',
+        ];
+
+        // Validate the request data
+        $validatedData = $request->validate($rules, $messages);
+
+        // Handle file uploads
+        $uploadedFilePaths = [];
+        $fileFields = [
+            'passport_upload',
+            'police_report_upload',
+            'edu_level_doc_upload',
+            'license_upload',
+            'nepal_work_cert_upload',
+            'abroad_work_cert_upload',
+        ];
+
+        foreach ($fileFields as $field) {
+            if ($request->hasFile($field)) {
+                $uploadedFilePaths[$field] = fileUpload($request, $field, 'applications');
+            } else {
+                $uploadedFilePaths[$field] = null; // No file uploaded for this field
+            }
+        }
+
+        // Merge uploaded file paths with validated data
+        $dataToStore = array_merge($validatedData, $uploadedFilePaths);
+
+        // Create a new Application instance and save it to the database
+        // Ensure your Application model has fillable properties for all fields,
+        // including the file upload paths (e.g., 'passport_upload', 'police_report_upload', etc.)
+        try {
+            $application = Application::create($dataToStore);
+            // Redirect with a success message
+            return redirect()->back()->with('success', 'Application created successfully.');
+        } catch (\Exception $e) {
+            // Handle database saving errors
+            return redirect()->back()->withInput()->withErrors(['database_error' => 'An error occurred while saving your application: ' . $e->getMessage()]);
         }
     }
 }

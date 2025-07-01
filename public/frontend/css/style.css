@@ -7740,7 +7740,8 @@ div#mCSB_1_container{
 }
 
 .testimonial-style-three .testimonial-content .inner-box .author-box .author-thumb img{
-  width: 100%;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
 }
 
