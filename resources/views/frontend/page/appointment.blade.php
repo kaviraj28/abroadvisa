@@ -287,17 +287,14 @@
                                             id="interestedCountry" data-original-required="true" name="interested_country"
                                             required>
                                             <option selected disabled value="">Select Country</option>
-                                            <option value="greece"
-                                                {{ old('interested_country') == 'greece' ? 'selected' : '' }}>Greece
-                                            </option>
-                                            <option value="portugal"
-                                                {{ old('interested_country') == 'portugal' ? 'selected' : '' }}>Portugal
-                                            </option>
-                                            <option value="germany"
-                                                {{ old('interested_country') == 'germany' ? 'selected' : '' }}>Germany
-                                            </option>
-                                            <option value="other"
-                                                {{ old('interested_country') == 'other' ? 'selected' : '' }}>Other</option>
+                                            @if ($countries->isNotEmpty())
+                                                @foreach ($countries as $key => $value)
+                                                    <option value="{{ $value->name ?? '' }}"
+                                                        {{ old('interested_country') == $value->name ? 'selected' : '' }}>
+                                                        {{ $value->name ?? '' }}
+                                                    </option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                         <label for="interestedCountry">Interested Country (रुची भएको देश)</label>
                                         @error('interested_country')

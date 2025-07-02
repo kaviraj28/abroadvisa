@@ -37,7 +37,8 @@ class FrontendController extends Controller
 
     public function appoint()
     {
-        return view('frontend.page.appointment');
+        $countries = Country::where('status', 1)->oldest('order')->get();
+        return view('frontend.page.appointment', compact(['countries']));
     }
 
 
